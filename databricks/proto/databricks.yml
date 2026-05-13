@@ -10,17 +10,18 @@ bundle:
   name: marketing_proto_e2e
 
 variables:
+  # Use `main` if your workspace has it; many serverless / academy workspaces expose `workspace` instead.
   catalog:
-    default: main
+    default: workspace
   bronze_schema:
     default: marketing_proto_bronze
   silver_schema:
     default: marketing_proto_silver
   gold_schema:
     default: marketing_proto_gold
-  # After uploading fixtures — DBFS, Volume, or s3://
+  # DBFS is often disabled on serverless — use a Unity Catalog Volume (create catalog.schema volume first).
   fixture_base:
-    default: /dbfs/FileStore/marketing_proto_fixtures
+    default: /Volumes/workspace/default/marketing_proto_fixtures
   product_line:
     default: HOSPITAL_ACCIDENT
 
