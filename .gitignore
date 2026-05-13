@@ -8,11 +8,15 @@ __pycache__/
 .venv/
 venv/
 
-# Large synthetic Parquet (regenerate with scripts/generate_synthetic_2m.py)
-synthetic_insurance_marketing_2m/*.parquet
-synthetic_insurance_marketing_smoke/*.parquet
+# --- Not required for Databricks proto job (keep locally; do not commit) ---
+/Mlops/
+/scripts/
+/README-synthetic-data.md
+/requirements-synth.txt
+/synthetic_insurance_marketing_2m/
+/synthetic_insurance_marketing_smoke/
 
-# Optional: large local CSVs (remove these lines if you want them in Git)
+# Large local CSVs
 /Cleaned_Marketing_dataset.csv
 /insurance_raw_100k.csv
 

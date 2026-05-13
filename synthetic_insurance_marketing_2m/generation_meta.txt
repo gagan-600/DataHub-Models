@@ -1,6 +1,0 @@
-n_target_rows=2000000
-chunk_rows=200000
-seed=42
-n_templates=10000
-exact_dup_rate=0.005
-total_rows_written=2000000
