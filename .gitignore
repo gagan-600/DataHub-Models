@@ -1,0 +1,23 @@
+# Secrets / local
+.env
+.env.*
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Large synthetic Parquet (regenerate with scripts/generate_synthetic_2m.py)
+synthetic_insurance_marketing_2m/*.parquet
+synthetic_insurance_marketing_smoke/*.parquet
+
+# Optional: large local CSVs (remove these lines if you want them in Git)
+/Cleaned_Marketing_dataset.csv
+/insurance_raw_100k.csv
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/

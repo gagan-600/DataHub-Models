@@ -1,0 +1,4 @@
+# Synthetic 2M dataset generator — flexible pins (binary wheels on Windows / Python 3.14+)
+numpy>=2.0,<3
+polars>=1.30.0
+pyarrow>=14.0.0

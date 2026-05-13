@@ -1,0 +1,3125 @@
+15:24
+15 minutes 24 seconds
+Really.
+15:25
+15 minutes 25 seconds
+All right.
+15:27
+15 minutes 27 seconds
+Do we need Julie or Julie?
+15:32
+15 minutes 32 seconds
+Let me message there.
+16:16
+16 minutes 16 seconds
+Hi, Julie.
+16:21
+16 minutes 21 seconds
+Hello.
+16:23
+16 minutes 23 seconds
+Hello.
+16:24
+16 minutes 24 seconds
+OK.
+16:24
+16 minutes 24 seconds
+So I think where we left off is we were kind of we kind of went back to the box of the auto job or individual review, OK.
+16:42
+16 minutes 42 seconds
+OK.
+16:43
+16 minutes 43 seconds
+So yes, so the auto job versus individual review job.
+16:48
+16 minutes 48 seconds
+So the auto jobs are what we would call batch processing.
+16:59
+16 minutes 59 seconds
+Marketing events are ready to go.
+17:01
+17 minutes 1 second
+We have data, it's passed all the different free processing checks, it's gone through member match.
+17:07
+17 minutes 7 seconds
+So now what we do is we create batch tables based on products.
+17:11
+17 minutes 11 seconds
+So if we have 20 jobs where you go, we'll create a control card that contains the event level marketing information for those 20 jobs, and we'll send that through processing to run what we call an MDM step.
+17:30
+17 minutes 30 seconds
+But essentially that's the step where it's applying global suppressions, meaning bad address suppressions.
+17:39
+17 minutes 39 seconds
+If you're flagged as a deceased record, you'll be flagged here and dropped.
+17:47
+17 minutes 47 seconds
+You already have the product you'll have at the point.
+17:53
+17 minutes 53 seconds
+There's a whole list of what we call global suppressions.
+17:57
+17 minutes 57 seconds
+Then we'll run through product suppression.
+17:59
+17 minutes 59 seconds
+So specifically if we're doing AD and B, if you're an insured and you've reached Max coverage, we're gonna suppress you.
+18:10
+18 minutes 10 seconds
+If you're uninsured, if you're on the client file and we find that you already have our products, we'll suppress you from that population, but keep you to survive marketing in the insured spoken key with half and recoups pretty straightforward product suppressions.
+18:28
+18 minutes 28 seconds
+Either you have the product or you don't.
+18:30
+18 minutes 30 seconds
+And then we'll go through the deep duping step.
+18:36
+18 minutes 36 seconds
+So this is where we'll identify how many people will get down to one unique instance of an individual.
+18:46
+18 minutes 46 seconds
+And Jasmine, correct me if I'm wrong, at this point we send your team the household dupes, right?
+18:54
+18 minutes 54 seconds
+Yes, yes, household gifts are based on the score.
+19:02
+19 minutes 2 seconds
+If we think they are responsive, we would still select the multiple individuals from the same household.
+19:09
+19 minutes 9 seconds
+We don't completely suppress all households.
+19:13
+19 minutes 13 seconds
+Duplicate household I should say.
+19:21
+19 minutes 21 seconds
+Any questions on what I've said so far?
+19:27
+19 minutes 27 seconds
+But all these groups are managing directly, not that the auto jobs.
+19:36
+19 minutes 36 seconds
+That's not true.
+19:37
+19 minutes 37 seconds
+Some of those are already built into the Axioms process.
+19:42
+19 minutes 42 seconds
+So it is if we have to make any changes, we have to go to Axiom to make that change.
+19:48
+19 minutes 48 seconds
+We don't have access to yes, yeah, we've met.
+19:52
+19 minutes 52 seconds
+Yeah, we provide everything to them or we tell them what to do.
+19:56
+19 minutes 56 seconds
+But if there is a system change or code change, we have to communicate to them and they do that process and that goes through APCR, which is process change request.
+20:08
+20 minutes 8 seconds
+That's how we do it.
+20:11
+20 minutes 11 seconds
+And that change, if it's requested to the auto flow, that's where it would really go through that PCR process that Jasmine was talking about.
+20:20
+20 minutes 20 seconds
+Having the individual review flow allows for more flexibility that if we need to make changes.
+20:28
+20 minutes 28 seconds
+So what we want, keeper marketing, we're able to tweak it on the fly with Dan Hoffer's team.
+20:36
+20 minutes 36 seconds
+Yeah, But the tool, it's still provided by Axiom, but we could make tweaks on our end.
+20:44
+20 minutes 44 seconds
+Dan Hoffer is it?
+20:45
+20 minutes 45 seconds
+Yeah, If we need to make any business rule change or anything like that on the fly like Julie said, or individual review job or specific to that campaign, we can do that.
+20:59
+20 minutes 59 seconds
+It's just that we don't have the platform today and that's why Axiom is doing that or yeah, the system infrastructure and everything is the code, everything.
+21:08
+21 minutes 8 seconds
+It's built by Axiom.
+21:10
+21 minutes 10 seconds
+Was that home grown by Axiom or part of the packages?
+21:13
+21 minutes 13 seconds
+Yeah, it's all home grown Axiom solution.
+21:18
+21 minutes 18 seconds
+No, our it was customized to our rules.
+21:22
+21 minutes 22 seconds
+So yeah, the Rapidus is what I was talking about.
+21:28
+21 minutes 28 seconds
+That's retired, but they replaced Rapidus with the another homegrown solution which is built in sequel.
+21:37
+21 minutes 37 seconds
+So that's where Dan Hoffer and Eric, those two, they manage that system and they are able to make tweaks specific to a campaign.
+21:48
+21 minutes 48 seconds
+If we need to apply any custom rules for any campaign for individual review jobs, so they don't touch the auto jobs.
+16:43
+16 minutes 43 seconds
+So yes, so the auto job versus individual review job.
+21:57
+21 minutes 57 seconds
+Everything is, you know, automated.
+22:00
+22 minutes
+We have a model and then we can also, I think we will cover that later, the trimming process, Julie, for auto jobs, we can cover that later, right in the next box.
+22:17
+22 minutes 17 seconds
+Yes, yeah, yeah.
+22:18
+22 minutes 18 seconds
+So basically the first step that the DBM team is doing in either the auto flow or the individual review flow is we are creating marketable universes to send some modelling for them to apply their modeling process steps.
+22:46
+22 minutes 46 seconds
+Yeah.
+22:46
+22 minutes 46 seconds
+So yeah, I guess that might just bump into your world then Jasmine, at that point if there's any questions on, I mean, we, there's layers of these business rules.
+22:59
+22 minutes 59 seconds
+I don't know how extensive or green at this point.
+23:02
+23 minutes 2 seconds
+But Julie, could you talk a little bit about just the process difference between VM and digital if you haven't already?
+23:11
+23 minutes 11 seconds
+If you have, I'm so sorry, I haven't been in the meeting this morning, but no, you're fine.
+23:19
+23 minutes 19 seconds
+So at this point, the digital process for to create emails, do we want to finish this first and then we can, you know, go through the same flow and see where the difference is for digital?
+23:34
+23 minutes 34 seconds
+Yep, wherever that makes, wherever it makes sense.
+23:36
+23 minutes 36 seconds
+Yeah.
+23:37
+23 minutes 37 seconds
+So the auto job, individual review job go to the right Julie Miller, not Castro, right.
+23:49
+23 minutes 49 seconds
+So this is where we Julie stopped right.
+23:54
+23 minutes 54 seconds
+Once the auto jobs, individual review jobs, if it's yes, it goes through a different process.
+24:04
+24 minutes 4 seconds
+And for auto jobs, we have a model, pre assigned model that we provided to Julie's team so she can execute that model.
+24:15
+24 minutes 15 seconds
+And also we have an option to upload a spreadsheet with all those individual review jobs.
+24:23
+24 minutes 23 seconds
+And we can still trim based on the past performance and the model.
+24:29
+24 minutes 29 seconds
+It's just a one time we go through that individual, sorry, order jobs and determine what portion of the file we need to trim in order to make a certain PPPM.
+24:43
+24 minutes 43 seconds
+Because sometimes you know, at 3000 job campaign it performed only $0.45 PPPM, $0.45 is underwater and we only mailed the 3000 name.
+24:56
+24 minutes 56 seconds
+So you know the $0.45.
+24:59
+24 minutes 59 seconds
+It could be by random, by chance, or should we give them benefit of the doubt one more time to see if that performance it's still going to hold or it's going to tank again.
+25:10
+25 minutes 10 seconds
+You know, those kind of determination.
+25:13
+25 minutes 13 seconds
+We go through that individual review list and decide what portion of the file need to trim and then we upload that spreadsheet.
+25:23
+25 minutes 23 seconds
+And once we upload that spreadsheet, we tell Julie's team the spreadsheet is ready.
+25:28
+25 minutes 28 seconds
+You can go to the next step to process auto job.
+25:35
+25 minutes 35 seconds
+Do we wanna finish the auto jobs first, Julie, before we get to the individual review?
+25:41
+25 minutes 41 seconds
+Yeah, we could do that.
+25:42
+25 minutes 42 seconds
+That's fine.
+25:44
+25 minutes 44 seconds
+So yeah, like we'll pick up from where Jasmine's team has uploaded the score file.
+25:50
+25 minutes 50 seconds
+We'll send that batch through to get the scores applied, and then right from there it kicks off what we call a fulfillment step.
+25:58
+25 minutes 58 seconds
+But it's really the step that creates the letter job output files at Axiom.
+26:04
+26 minutes 4 seconds
+So that file will go back to Axiom and it will get the name and address information appended back to the record and it will generate the data mail layouts.
+26:18
+26 minutes 18 seconds
+And then we'll have various reports for my team, the QC, to make sure that we didn't lose a substantial amount of quantity along the way from this automated process.
+26:30
+26 minutes 30 seconds
+It will also make sure that if the event ID information is matching correctly, like we're pulling in the right spoken keys, We didn't like nothing got transposed along the way.
+26:42
+26 minutes 42 seconds
+So that's one of the last checks that we do to make sure that what's getting sent to the letter shop and what's getting uploaded to our master enrollment system match the marquee event setups.
+26:58
+26 minutes 58 seconds
+Just just wanted to see where that in the flow chart for the individual reviews up.
+27:04
+27 minutes 4 seconds
+Can you go up?
+27:05
+27 minutes 5 seconds
+Yeah.
+27:07
+27 minutes 7 seconds
+So if it's an auto job, yeah, for auto, it goes out to the letter shop all the way, right?
+27:17
+27 minutes 17 seconds
+Yeah.
+27:18
+27 minutes 18 seconds
+So this marketing file, Yeah, marketing file NCOA #2 right.
+27:30
+27 minutes 30 seconds
+That also applies to the auto jobs, final suppressions and then marketing file QC report created.
+27:37
+27 minutes 37 seconds
+So there are some steps in between, right, Julie?
+27:41
+27 minutes 41 seconds
+When but before they create they finalize the final output, your team stop and QC the reports to make sure everything assigned correctly and then move on to the next step.
+27:57
+27 minutes 57 seconds
+Yeah.
+27:58
+27 minutes 58 seconds
+So we have the stop at the MDM before we send it to scoring, which is like the initial let's make sure we're not dropping 80% of the file because they're a state's not set up correctly or something along those lines.
+28:12
+28 minutes 12 seconds
+So once we've determined that the marketing universe is accurate, we send it to the scoring step.
+28:20
+28 minutes 20 seconds
+And in the auto flow, once we send it to scoring, it scores and then kicks off This marketing file prep box shipped to the auto really is just that it's pretty auto like there's a few QC steps to make sure that we're not output like incorrect information along the way and that we're outputting amount of records.
+28:55
+28 minutes 55 seconds
+But for the most part, once it's in the flow, it's yeah, pretty in and out of work.
+29:03
+29 minutes 3 seconds
+Yeah.
+29:04
+29 minutes 4 seconds
+And that's pretty much, Preston, that says what you're visioning, like all of them run through the model, assign a score and select based on whatever the model's saying and create a final list.
+29:20
+29 minutes 20 seconds
+That's that's your vision.
+29:23
+29 minutes 23 seconds
+Well, throw it through 100 volts.
+29:25
+29 minutes 25 seconds
+Yeah.
+29:26
+29 minutes 26 seconds
+Assign a score.
+29:26
+29 minutes 26 seconds
+Right, Right.
+29:27
+29 minutes 27 seconds
+Yes.
+29:28
+29 minutes 28 seconds
+Everything should be an auto job.
+29:29
+29 minutes 29 seconds
+Is the vision, though.
+29:31
+29 minutes 31 seconds
+That's that's the way, Preston.
+29:33
+29 minutes 33 seconds
+That's vision in in essence, Yes.
+29:40
+29 minutes 40 seconds
+Yeah, or an AI agent that's going to create that list for us, the best profitable list.
+29:50
+29 minutes 50 seconds
+Yeah.
+29:50
+29 minutes 50 seconds
+I mean, I mean, that is the vision.
+29:52
+29 minutes 52 seconds
+I'm not being, you know, pessimistic or it's just it's a it's a heavy lift.
+29:56
+29 minutes 56 seconds
+Yeah, Yeah.
+30:00
+30 minutes
+For the individual review jobs, I think this is where Ashish, do you wanna pick up from here?
+30:09
+30 minutes 9 seconds
+Because the individual review jobs, each file we get, we call SD file or free net file.
+30:17
+30 minutes 17 seconds
+Can you click show the PowerPoint or I can share this with Jasmine.
+30:25
+30 minutes 25 seconds
+That's why I have it open.
+30:27
+30 minutes 27 seconds
+Oh, you have it open.
+30:28
+30 minutes 28 seconds
+OK, OK.
+30:33
+30 minutes 33 seconds
+Yeah.
+30:33
+30 minutes 33 seconds
+I mean this deck we have already shared, I mean, it's just trying to for the.
+30:40
+30 minutes 40 seconds
+Yeah, not everyone was there, Ashish.
+30:43
+30 minutes 43 seconds
+So I think let's, yeah, let's just go through each of the.
+30:48
+30 minutes 48 seconds
+Yeah.
+30:50
+30 minutes 50 seconds
+OK.
+30:50
+30 minutes 50 seconds
+So yes, we are discussing here the individual review process.
+30:55
+30 minutes 55 seconds
+So this is what we discussed here.
+30:57
+30 minutes 57 seconds
+You know, whatever DBM does, we receive the SD files.
+31:03
+31 minutes 3 seconds
+And I also want to discuss like how we are involved with XCM in all this.
+31:08
+31 minutes 8 seconds
+So first thing is for storage as well.
+31:11
+31 minutes 11 seconds
+So we use their tools, SAS and other sequel and we use their storage to manage these day-to-day operations.
+31:20
+31 minutes 20 seconds
+So we receive these SD files.
+31:23
+31 minutes 23 seconds
+I mean they can easily sit in our lake house or wherever we want to put.
+31:27
+31 minutes 27 seconds
+And can I add something when we say SD file, stat file and others?
+31:34
+31 minutes 34 seconds
+So every single marketing file, when the file comes in, it goes through all the steps that Julie just covered.
+31:42
+31 minutes 42 seconds
+And then before it comes to modeling, Dan Hoffer and his team, he apply all the business rules specific to that product and specific campaign.
+31:54
+31 minutes 54 seconds
+And that's the SD file.
+31:56
+31 minutes 56 seconds
+It's, you know, post to hygiene after all the suppressions, it's the marketable universe.
+32:03
+32 minutes 3 seconds
+This is, you know, let's say 100,000 names, it's eligible to market at that point.
+32:09
+32 minutes 9 seconds
+We did not apply any score or anything like that.
+32:13
+32 minutes 13 seconds
+This is the entire universe.
+32:14
+32 minutes 14 seconds
+It's available to market and the stat files, every single marketing file for that 100,000 axiom creates different data sources.
+32:26
+32 minutes 26 seconds
+So if it's the promotion history, there is a stat file for promotion history.
+32:33
+32 minutes 33 seconds
+For membership history, there is another stat file.
+32:36
+32 minutes 36 seconds
+For the demographic data, there is another stat file.
+32:39
+32 minutes 39 seconds
+So every single data sources is a stat file we call.
+32:46
+32 minutes 46 seconds
+So during the once we get all those files we use, we call B pit.
+32:53
+32 minutes 53 seconds
+B pit is a matching key.
+32:55
+32 minutes 55 seconds
+It's common across all those files within that marketing trial.
+33:00
+33 minutes
+When they process the marketing trial, they create a unique ID within that marketing trial.
+33:07
+33 minutes 7 seconds
+It's called the B pit.
+33:08
+33 minutes 8 seconds
+And that B pit is the same for all stat files and that's the B pit we use to combine all these together for scoring purpose.
+33:20
+33 minutes 20 seconds
+Just wanted to share that so that way you'll have a baseline understanding before we move on.
+33:27
+33 minutes 27 seconds
+Yeah.
+33:28
+33 minutes 28 seconds
+And just to add a little bit more context, SDI think that's one stands for score driver, right?
+33:33
+33 minutes 33 seconds
+So that's the file that drives the score.
+33:36
+33 minutes 36 seconds
+Basically the main file and stat file is a basically static file.
+33:40
+33 minutes 40 seconds
+So all we are doing, we are taking a snapshot for that particular client campaign of the data that means across all data sources.
+33:49
+33 minutes 49 seconds
+So you know, since that main data source that gets refreshed with time.
+33:54
+33 minutes 54 seconds
+But we want to have the knowledge what was the data at the time of marketing because that is when the behaviour of an individual is determined whether they responded to a marketing or not.
+34:06
+34 minutes 6 seconds
+In future main data source would probably change, you know the tables refresh.
+34:10
+34 minutes 10 seconds
+So we create these static files that snapshot of data and we create this combined file ready for scoring.
+34:19
+34 minutes 19 seconds
+And all this happens in the SASS in this process called auto MRGL creation.
+34:27
+34 minutes 27 seconds
+So again, here we are using SASS, the axiom tool for creating these files.
+34:32
+34 minutes 32 seconds
+And basically to create that final file where we can append the models course, which has all the variables needed and not just the variables needed for the models, but all the variables that we have that file.
+34:46
+34 minutes 46 seconds
+We would, yeah, yeah, whatever, whatever it's available.
+34:52
+34 minutes 52 seconds
+1500 attributes or 2000 attributes for that specific person.
+34:58
+34 minutes 58 seconds
+So Preston Porter, Jasmine, Joseph, you know, every single record has all these variables assigned to that person.
+35:06
+35 minutes 6 seconds
+And that's what the merge all naming convention stands for, and that's what it's feeding into.
+35:13
+35 minutes 13 seconds
+Execute the model.
+35:16
+35 minutes 16 seconds
+Yep.
+35:16
+35 minutes 16 seconds
+And these files get really big very soon.
+35:19
+35 minutes 19 seconds
+Like a million records would be around 20 gig space, you know, because that's a wide data set, like 2018 hundred something variables, which includes all operational variables and the modelling variables.
+35:34
+35 minutes 34 seconds
+So also one important thing that we do is since we don't have a centralized system, we have some of our models set up in the SYS environment with the XM, you know, like some of our team members who work in SAS technology to build models.
+35:49
+35 minutes 49 seconds
+So we have those models picked up.
+35:52
+35 minutes 52 seconds
+All those model scores are also picked up automatically in this step.
+35:57
+35 minutes 57 seconds
+So this is an auto process.
+35:59
+35 minutes 59 seconds
+All you know the analysts who are running this process they need to do is just click a batch file which will let's say they want to have 5 or 6 jobs to be processed.
+36:10
+36 minutes 10 seconds
+So they just put the input in an Excel file.
+36:13
+36 minutes 13 seconds
+In future we can have a nice dashboard for that, but as of now we operate out of an Excel file.
+36:18
+36 minutes 18 seconds
+We put the inputs and we just submit a batch code that will automatically creates all these files.
+36:24
+36 minutes 24 seconds
+If any models course needs to be picked up from the SAS environment, it gets picked up right here.
+36:30
+36 minutes 30 seconds
+And we create these, you know, this final file.
+36:35
+36 minutes 35 seconds
+So there are also, I mean this is not a linear flow, but just to give some example, like there are also other files sitting in the system, not just, I mean in this file system, not just these MRGL files, there may be some previous sample files sitting here, some so files list of list all kinds of files and of course MRG files.
+36:58
+36 minutes 58 seconds
+Just to mention that how we use them probably we'll discuss later.
+37:03
+37 minutes 3 seconds
+So as of now, essentially Ashish, Ashish, that's where we create that new space flag, right?
+37:11
+37 minutes 11 seconds
+Yeah, all those OK, So even yes, in the MRGL creation process, yes, that news based flag also gets created here as well.
+37:21
+37 minutes 21 seconds
+So what's that we picked up that we looked at the previous file and identify because clients don't tell us like who are the new names on this file?
+37:34
+37 minutes 34 seconds
+You know, not all clients provide account open date or anything like that.
+37:38
+37 minutes 38 seconds
+So we just pick up, match it to the previous file and flag who are the brand new names never promoted before or you know, we flag.
+37:49
+37 minutes 49 seconds
+There are two sets of news.
+37:51
+37 minutes 51 seconds
+News P is we never see them before in the last three years and another flag, it's called the news These we have seen them before, but not for this product and then the base names.
+38:04
+38 minutes 4 seconds
+So those three flags are carried over for rest of the process.
+38:11
+38 minutes 11 seconds
+Yep.
+38:11
+38 minutes 11 seconds
+So we create these internal variables.
+38:14
+38 minutes 14 seconds
+You know, as Justin mentioned, this is not a data point that is provided by XM or from our membership history.
+38:20
+38 minutes 20 seconds
+It's just from the processing file to file.
+38:24
+38 minutes 24 seconds
+What are the changes?
+38:25
+38 minutes 25 seconds
+We create these variables and these are very important we get to know.
+38:30
+38 minutes 30 seconds
+Yeah, as Justin mentioned, what are news names for the product.
+38:32
+38 minutes 32 seconds
+Yeah, or for the client.
+38:35
+38 minutes 35 seconds
+Yeah.
+38:36
+38 minutes 36 seconds
+And also one more thing, this is where like the model doesn't pick up or distinguish the news where it says, you know, the prior promotion, It's there.
+38:46
+38 minutes 46 seconds
+Those names, they haven't seen as many promotions as you know, the other base names.
+38:54
+38 minutes 54 seconds
+So it does get a higher score, but it's not enough higher score to select pretty deep.
+39:00
+39 minutes
+So that's a manual intervention.
+39:03
+39 minutes 3 seconds
+So Preston's point like you know, in the beginning this is not going to be captured with this AI agent.
+39:09
+39 minutes 9 seconds
+So, but eventually we will be able to force them to select a deeper on those names.
+39:19
+39 minutes 19 seconds
+Yep, Yep, we can have that longer discussion like you know, how we can manage that.
+39:25
+39 minutes 25 seconds
+So once we have this file created, we move it to our environment, our AWS VM environment.
+39:34
+39 minutes 34 seconds
+So this is the first file transfer happening from XM's environment to AWS.
+39:41
+39 minutes 41 seconds
+So now there are two things.
+39:43
+39 minutes 43 seconds
+So let's say this is what we're talking about for scoring purpose.
+39:47
+39 minutes 47 seconds
+So one, when we're talking about for scoring purpose, we do not have responders information, right?
+39:53
+39 minutes 53 seconds
+So this is like a secondary flow when we do the validation.
+39:57
+39 minutes 57 seconds
+So we basically transfer two types of files.
+40:01
+40 minutes 1 second
+One is the current a margin file for the current scoring step or the current scoring campaign, and the other one probably the previous file.
+40:12
+40 minutes 12 seconds
+So we may have done, let's say for example, we are talking about May campaign for a particular client.
+40:17
+40 minutes 17 seconds
+We may have done probably February in past.
+40:21
+40 minutes 21 seconds
+So we want to see how that February campaign performed and want to make decisions as per that as well.
+40:26
+40 minutes 26 seconds
+And for that matter, it could be multiple campaigns, February, December of previous year, so on and so forth.
+40:32
+40 minutes 32 seconds
+So when we came process the previous February campaign, those files were already sitting here, they were already transferred at that time.
+40:40
+40 minutes 40 seconds
+So what we do is wetransfer the new scoring file and we pick up responders for the previous MRGL file for the previous campaign from the news based report.
+40:52
+40 minutes 52 seconds
+So I'll talk a little bit more on this news based report, but just to have the flow clear, we are having these two types of appends.
+41:00
+41 minutes
+So as of now, we are in let's say May or April, we have pretty much, you know, the campaign has matured, we can pick some responders and we can see how the previous campaign did and basically base our decisions on this new scoring as per that previous game.
+41:19
+41 minutes 19 seconds
+So now from this step, we call this auto sample prep.
+41:23
+41 minutes 23 seconds
+So the sample prep step like picking up the responders from the new space report, this happens automatically from previous MRGS and in some cases this is a newer step.
+41:37
+41 minutes 37 seconds
+So we didn't have.
+41:38
+41 minutes 38 seconds
+So we started this process probably sometime mid-september last year.
+41:43
+41 minutes 43 seconds
+Before that you know, it was pretty manual.
+41:47
+41 minutes 47 seconds
+So we would transfer directly samples from the Axioms environment.
+41:53
+41 minutes 53 seconds
+So for old campaigns we directly samples, but we if we have you know processed a campaign in a newer way, we would have the MRGL file from that time and we will just append responders whatever the cases, it just happens in US.
+42:10
+42 minutes 10 seconds
+So Pragman going back to your earlier point, like you know, do we do the back testing or do we look at the you know, the validation or response?
+42:20
+42 minutes 20 seconds
+This is the step like when the campaign it's mature, we are appending the responders to the SD file that previously that generated during file processing.
+42:34
+42 minutes 34 seconds
+And that's what that's the process it's been doing to validate the responders how the model, its ranking, how good the campaign did or how good the the projection was, all those, you know, that's the purpose of appending the responders to that files.
+42:54
+42 minutes 54 seconds
+Go ahead and share.
+42:55
+42 minutes 55 seconds
+Yeah.
+42:56
+42 minutes 56 seconds
+So that AST file became MRGL file, right.
+43:00
+43 minutes
+That's part of it.
+43:02
+43 minutes 2 seconds
+Yes.
+43:02
+43 minutes 2 seconds
+That's the driver.
+43:03
+43 minutes 3 seconds
+Yes.
+43:03
+43 minutes 3 seconds
+The SD offending is happening there.
+43:05
+43 minutes 5 seconds
+Exactly.
+43:06
+43 minutes 6 seconds
+Yes, you're correct.
+43:07
+43 minutes 7 seconds
+SD file, it's the driver as we go down.
+43:10
+43 minutes 10 seconds
+What is that SO file and lol file who is what is creating?
+43:13
+43 minutes 13 seconds
+Yeah, we'll get there.
+43:14
+43 minutes 14 seconds
+SO file, it's the scoring output.
+43:17
+43 minutes 17 seconds
+That's the final selected.
+43:20
+43 minutes 20 seconds
+So the SO file has additional flags from the SD file, The SD file and SO file from a quantity perspective, it has to match 100% when it loaded back to Axioms warehouse.
+43:34
+43 minutes 34 seconds
+But it has an additional flag of key flag YNNY means we are targeting these names and is the names that we are not selecting.
+43:46
+43 minutes 46 seconds
+So yeah, so those that's the additional that's the only difference from the SO file to the SD file.
+43:52
+43 minutes 52 seconds
+Sorry, SD file to the SL files.
+43:55
+43 minutes 55 seconds
+I know that's a file share there, right?
+43:57
+43 minutes 57 seconds
+The file system and SAS, right.
+43:59
+43 minutes 59 seconds
+SAS and file share is there that ASO and LOL files.
+44:03
+44 minutes 3 seconds
+So they're I'm I'm assuming they're already there.
+44:06
+44 minutes 6 seconds
+So what had created that or what?
+44:08
+44 minutes 8 seconds
+What is that?
+44:09
+44 minutes 9 seconds
+How is that So they they are from the previous processing.
+44:13
+44 minutes 13 seconds
+Yeah, yeah, from the previous from the previous file campaign.
+44:18
+44 minutes 18 seconds
+So let's say so that yeah, this.
+44:21
+44 minutes 21 seconds
+So for example, yeah, let me let me say so for credit union ABC, we are processing a campaign for a May campaign, right.
+44:34
+44 minutes 34 seconds
+So May is going through right now and that's the SD file DBM creates.
+44:40
+44 minutes 40 seconds
+We got a new marketing file.
+44:42
+44 minutes 42 seconds
+DBM created an SD file and stat file.
+44:46
+44 minutes 46 seconds
+But when we said the other files, credit union ABC, we marketed AD and D last year in December, let's say.
+44:55
+44 minutes 55 seconds
+So we have SD file, we have SO file, we have a merge all files, everything was from the previous campaign.
+45:03
+45 minutes 3 seconds
+So we are taking all that in order for us to validate how the model was ranking and how good the model combination was.
+45:12
+45 minutes 12 seconds
+That's the step that we are doing there.
+45:15
+45 minutes 15 seconds
+So, so basically just one message.
+45:17
+45 minutes 17 seconds
+So that merge all file is the current marketing and all other associated files are from the previous.
+45:24
+45 minutes 24 seconds
+Yes, there is a previous merge all file too all that right.
+45:29
+45 minutes 29 seconds
+So this just like how we are doing it today.
+45:33
+45 minutes 33 seconds
+The merge all file for may campaign, we have another merge all from the previous campaign.
+45:39
+45 minutes 39 seconds
+We are using that to validate or preparing the sample and validate the campaign.
+45:46
+45 minutes 46 seconds
+So it's got it's the same typo file, but it's not the exact same.
+45:54
+45 minutes 54 seconds
+Do Ashish, do you want to add anything to it?
+45:56
+45 minutes 56 seconds
+No, that yeah, that's pretty clear.
+45:58
+45 minutes 58 seconds
+And yeah, it's just that the current merger file is getting transferred now previous one was already sitting in the VM environment for previous one.
+46:08
+46 minutes 8 seconds
+We may be transferring the SO files to pick up some of the scores or the responders pending from our warehouse news based report.
+46:19
+46 minutes 19 seconds
+So I mean if this flow is not very clear, but yeah, that's the process.
+46:26
+46 minutes 26 seconds
+Yeah, I know.
+46:27
+46 minutes 27 seconds
+But good question.
+46:28
+46 minutes 28 seconds
+Now just to clarify what are the difference and all this is happening in the Axiom environment?
+46:35
+46 minutes 35 seconds
+It's in the Axiom environment, yes.
+46:38
+46 minutes 38 seconds
+Most of them are in SaaS, but when it comes down there is, you know, some of them.
+46:44
+46 minutes 44 seconds
+It's in our VM AWS environment.
+46:48
+46 minutes 48 seconds
+Yeah, I was thinking about just like, yeah, but eventually it's all going to be in the AWS environment.
+46:56
+46 minutes 56 seconds
+The virtual machine that you guys set up for us.
+46:59
+46 minutes 59 seconds
+Our goal is to have a pretty much all SaaS programs, everything convert to this AWS virtual machine within our Franklin Madison environment.
+47:08
+47 minutes 8 seconds
+Well, literally that's part of the data, right.
+47:10
+47 minutes 10 seconds
+That's the, but even before we get there.
+47:13
+47 minutes 13 seconds
+Oh, you're doing it.
+47:13
+47 minutes 13 seconds
+Yes, yes, we have a mini data hub for the modelling piece that's going on right now because this live modeling, yeah, only this this step auto emerging file creation is happening in the XM environment in SAS.
+47:32
+47 minutes 32 seconds
+The auto sample prep process is happening in our environment.
+47:37
+47 minutes 37 seconds
+Yeah, that's the AWSVM, it's within Franklin Madison's.
+47:42
+47 minutes 42 seconds
+So all the appending of the responders and everything.
+47:45
+47 minutes 45 seconds
+And this piece can easily shift in environments.
+47:47
+47 minutes 47 seconds
+Just that, you know, since we received these files here, we just, and all the data, the stat file, you know, all these we receive here, we just process it right here and move then the final file to the VM environment.
+48:02
+48 minutes 2 seconds
+So how do we you transfer the files maximum to us in this area?
+48:06
+48 minutes 6 seconds
+So yeah, that's a pain point.
+48:08
+48 minutes 8 seconds
+Again, that's what we mentioned.
+48:11
+48 minutes 11 seconds
+This sets the biggest pain point.
+48:13
+48 minutes 13 seconds
+Yes, that's a pain point now.
+48:15
+48 minutes 15 seconds
+But some of the big files we are in the process of up there running, I mean transferred through SFTP, so it gets automatically feed into the AWS environment.
+48:29
+48 minutes 29 seconds
+So actually less management.
+48:31
+48 minutes 31 seconds
+Well, not today we are doing it, but once we set up that automation, we we just have to move that from the warehouse transfer over to the VM automatically rather than us sitting there and manually moving in.
+48:47
+48 minutes 47 seconds
+So to Ashish's point that that's a pain point, but eventually that's not going to be a painful point for us.
+48:53
+48 minutes 53 seconds
+Everything will be in one place to this whole process about is real by the merger, the process of talking.
+49:01
+49 minutes 1 second
+But are they sex files?
+49:04
+49 minutes 4 seconds
+Is that a homegrown process or is this the industry standard that every other marketing company follows including it from the right or or did we adopt it from some of the old systems that we were using?
+49:15
+49 minutes 15 seconds
+From there we just carried on straight to understand that.
+49:18
+49 minutes 18 seconds
+I mean, if you think about it, I think every single file has to every single marketing file has to be processed, right.
+49:26
+49 minutes 26 seconds
+So in that sense, the goal is apply the business rules and create some pre net file post to hygiene and apply the model and create a score.
+49:40
+49 minutes 40 seconds
+So that's the end goal.
+49:43
+49 minutes 43 seconds
+However we get there, we can decide how we want to get there.
+49:47
+49 minutes 47 seconds
+Yes, how they is this current process if we innovate ourselves or if we adopt it from somebody else, We did not adopt it from somewhere else.
+49:57
+49 minutes 57 seconds
+I think this is the way we had it even from IBM main train when we were.
+50:03
+50 minutes 3 seconds
+Yeah, I imagine there's some level of this through other organizations.
+50:08
+50 minutes 8 seconds
+We probably customized it.
+50:10
+50 minutes 10 seconds
+Yeah, to our right, right, right.
+50:12
+50 minutes 12 seconds
+Yes.
+50:13
+50 minutes 13 seconds
+I mean, at the end of the day, we process a campaign and when the response comes in, we append the responders to it and understand how the process works.
+50:24
+50 minutes 24 seconds
+So very high level, that's what we are achieving.
+50:27
+50 minutes 27 seconds
+But I'm on.
+50:28
+50 minutes 28 seconds
+You have a blank sheet of paper, you can do whatever you want.
+50:33
+50 minutes 33 seconds
+Yeah, Yeah, I think you're open to anything, right?
+50:36
+50 minutes 36 seconds
+Yeah, Yeah.
+50:37
+50 minutes 37 seconds
+I mean, yes, it's blank sheet of paper.
+50:42
+50 minutes 42 seconds
+Just for this to be context here, Rahman, I mean, I would say the reason we have this process is because we don't have this direct connectivity from the, you know, accents warehouse to AWS if we would have it.
+50:58
+50 minutes 58 seconds
+I mean, if we as of now we don't have it.
+52:28
+52 minutes 28 seconds
+Like on just average, how many of you guys touched do you think?
+52:30
+52 minutes 30 seconds
+I mean, from a campaign perspective, we have about 2000, yeah, campaigns.
+52:36
+52 minutes 36 seconds
+But again, behind the scene at Axiom, it may be 4000 files because sometimes one client send 2 files, one for share, one for share draft and then we have suppression files.
+52:50
+52 minutes 50 seconds
+So it all adds up right?
+52:52
+52 minutes 52 seconds
+From a number of file perspective, I think it may be much much more than 2000.
+52:58
+52 minutes 58 seconds
+But once it comes to modelling, 1 file per campaign.
+53:05
+53 minutes 5 seconds
+So but one file per campaign.
+53:09
+53 minutes 9 seconds
+That's the SD file we are talking about the driver.
+53:12
+53 minutes 12 seconds
+But there are many files associated to that SD file.
+53:16
+53 minutes 16 seconds
+It has the stat file, you know, for one stat file per data source file per each stack each, Yeah, each data source we have A1 stat file.
+53:29
+53 minutes 29 seconds
+So it's like a three or four stat files per campaign.
+53:33
+53 minutes 33 seconds
+So 5-6, it's a lot of data.
+53:35
+53 minutes 35 seconds
+Yeah, it is a lot of data and scope around that.
+53:38
+53 minutes 38 seconds
+Right.
+53:39
+53 minutes 39 seconds
+Like, yeah.
+53:40
+53 minutes 40 seconds
+Well, I think that's probably why you're saying it's a blank sheet.
+53:43
+53 minutes 43 seconds
+Like we we've got it in a certain way.
+53:45
+53 minutes 45 seconds
+Yeah, it's built for today.
+53:47
+53 minutes 47 seconds
+But if we redesign it, we may go about it a different way because there is so many different, right.
+53:51
+53 minutes 51 seconds
+And also to Ashish's point, the the merge all file once we have all our attributes appended to 1 file, that's a wide file, right?
+54:02
+54 minutes 2 seconds
+So we have 100,000 records and 1500 attributes appended to that 100,000 records.
+54:08
+54 minutes 8 seconds
+That's humongous file.
+54:12
+54 minutes 12 seconds
+So that's, you know, that's considered the driver for all our scoring output and things like that.
+54:20
+54 minutes 20 seconds
+From the modeling perspective, if it's not in the audit job, does each client have their own client product combination model?
+54:28
+54 minutes 28 seconds
+So when that model is wrong, what do you do when it's gonna be wrong?
+54:33
+54 minutes 33 seconds
+It's either good or bad.
+54:34
+54 minutes 34 seconds
+When you say wrong, means the model, it's not performing as we expected.
+54:39
+54 minutes 39 seconds
+Yeah.
+54:40
+54 minutes 40 seconds
+So either we have to find out the reason, right.
+54:43
+54 minutes 43 seconds
+Sometimes it's it's just seasonality that could be the reason.
+54:47
+54 minutes 47 seconds
+At that time the model didn't perform, but all other times it performed.
+54:52
+54 minutes 52 seconds
+Yeah.
+54:52
+54 minutes 52 seconds
+Or the anomalies you throw.
+54:54
+54 minutes 54 seconds
+Yeah.
+54:54
+54 minutes 54 seconds
+So that's the Ashish's model validation process.
+54:59
+54 minutes 59 seconds
+So every model they assign an AUC score and that's the AUC score.
+55:05
+55 minutes 5 seconds
+It's the measure for us to evaluate how good the model is.
+55:09
+55 minutes 9 seconds
+We have a certain threshold.
+55:11
+55 minutes 11 seconds
+If it's anything below, this is not a good model that for us to use.
+55:15
+55 minutes 15 seconds
+And if it's anything higher than this AUC score, it's a good model, good combination we can use.
+55:21
+55 minutes 21 seconds
+So that's what it happens during that order validation process and the doing that with every model, it's every single campaign.
+55:30
+55 minutes 30 seconds
+Yeah, yeah, yes, yeah.
+55:32
+55 minutes 32 seconds
+And that's the beauty of Ashish.
+55:34
+55 minutes 34 seconds
+When we did that automation process, the automated sample prep and automated model validation process, we are able to validate many more models and combination with this process compared to previously, we this this was more manual.
+55:52
+55 minutes 52 seconds
+Oh, this campaign didn't perform very well.
+55:55
+55 minutes 55 seconds
+So let's look at that model, what we used or maybe another model, you know, and stuff that one.
+56:04
+56 minutes 4 seconds
+So we were limited in that model validation process.
+56:07
+56 minutes 7 seconds
+But now with this automated process, we've can feed in as many models and as many combination.
+56:15
+56 minutes 15 seconds
+We can evaluate the AUC score and come up with a better model that and you say it's not before.
+56:24
+56 minutes 24 seconds
+What's the, what's the measurement like?
+56:26
+56 minutes 26 seconds
+What are you looking?
+56:27
+56 minutes 27 seconds
+Ranking is one of the main category because if the not the lift, because the lift can be many different, I mean lift too, but the exact PPPM would be predicted that has many different factors go.
+56:42
+56 minutes 42 seconds
+Yeah.
+56:43
+56 minutes 43 seconds
+But what about response do you look at?
+56:45
+56 minutes 45 seconds
+Yeah, the response and PPPM, they are highly correlated.
+56:49
+56 minutes 49 seconds
+So if the PPPM it's ranking, the response also ranking.
+56:53
+56 minutes 53 seconds
+We do look at the always most of the time, yes.
+56:56
+56 minutes 56 seconds
+But Ashish, if you have anything else to add, please.
+57:02
+57 minutes 2 seconds
+Yep, Yep.
+57:03
+57 minutes 3 seconds
+We'll discuss.
+57:04
+57 minutes 4 seconds
+We'll come to that Preston, in the auto validation framework in detail.
+57:07
+57 minutes 7 seconds
+We can discuss that.
+57:08
+57 minutes 8 seconds
+So just to you know clear here like what we are looking basically essentially here.
+57:14
+57 minutes 14 seconds
+So all we are looking Rahman here a snapshot of the data at that time.
+57:19
+57 minutes 19 seconds
+You know because all these campaigns, these are marginal files that we are creating.
+57:24
+57 minutes 24 seconds
+We have a cut date.
+57:25
+57 minutes 25 seconds
+So this campaign is processed April 7th, 2026.
+57:30
+57 minutes 30 seconds
+So we need the data as per that date.
+57:32
+57 minutes 32 seconds
+What was the data?
+57:33
+57 minutes 33 seconds
+So we take that snapshot and we have to have that snapshot available so that we can validate at as per that snapshot of data the response that would come later in time.
+57:47
+57 minutes 47 seconds
+So that's the idea basically how we get there.
+57:50
+57 minutes 50 seconds
+We don't care, you know?
+57:52
+57 minutes 52 seconds
+Yeah, it's most of the time that cut date is like that's when the client pulled the file.
+57:58
+57 minutes 58 seconds
+So that's a snapshot of where they were when they pulled the file.
+58:02
+58 minutes 2 seconds
+So that's the idea of that cut date from the day that they pulled the file.
+58:08
+58 minutes 8 seconds
+If we need to calculate any kind of duration for residency, those kind of variables, because we do have some duration variable in our models.
+58:20
+58 minutes 20 seconds
+So that's the idea of using that cut date and even, yeah, yeah, that's why.
+58:26
+58 minutes 26 seconds
+And even demographics or any variable for that matter, because everything may change, right?
+58:32
+58 minutes 32 seconds
+The data of an individual does not remain the same.
+58:35
+58 minutes 35 seconds
+So we need that snapshot of the data basically.
+58:38
+58 minutes 38 seconds
+So that's what we're doing here essentially, right.
+58:42
+58 minutes 42 seconds
+But we don't calculate any duration based on demographic or anything during this file processing.
+58:49
+58 minutes 49 seconds
+But later on, six months down the road where we were at that time when we marketed versus where we are today, that's when we can use those stack files for analysis purpose later on.
+59:03
+59 minutes 3 seconds
+Yep.
+59:04
+59 minutes 4 seconds
+So in this tab, we basically have two files.
+59:08
+59 minutes 8 seconds
+One is the for the current campaign, which is let's say for example may just the MRGL file and for the previous campaign, let's say February, we have the entire sample created out of just this step and it's an automated batch process.
+59:23
+59 minutes 23 seconds
+So if we have 10 files feed in, we would create the 10 outputs which will go forward.
+59:30
+59 minutes 30 seconds
+So it's just that we maintain again, an Excel spreadsheet, we put in the inputs of different files and we submit the batch code, it creates the output and that, you know, individual Excel files that we maintain for different processes, we can definitely have them centralized in one centralized dashboard and just kick the process that will take us, you know, from start to the end.
+59:55
+59 minutes 55 seconds
+But as of now, we have these pin points of transfer.
+59:58
+59 minutes 58 seconds
+If we have to run 10 files, we have to transfer 10 files.
+1:02:54
+1 hour 2 minutes 54 seconds
+Here all we're looking is which combination can get us better result just purely average.
+1:03:01
+1 hour 3 minutes 1 second
+And the reason we do it is to reduce variance.
+1:03:05
+1 hour 3 minutes 5 seconds
+We know because since we have all singular model performance as well, if the singular model performance is not good, it won't survive in the combination.
+1:03:15
+1 hour 3 minutes 15 seconds
+But let's say there are five models which have just take an example here, AUC around 0.7 range 0.5 is the worst, one is the best.
+1:03:25
+1 hour 3 minutes 25 seconds
+SO 0.7 is pretty good industry standard for our use case with less response rate.
+1:03:31
+1 hour 3 minutes 31 seconds
+So with that we have, let's say 5 competing models.
+1:03:34
+1 hour 3 minutes 34 seconds
+We just average them to create less variance across models.
+1:03:41
+1 hour 3 minutes 41 seconds
+So you know, this is also one very important thing in our use case.
+1:03:45
+1 hour 3 minutes 45 seconds
+We don't want to have a combination that performs only this time.
+1:03:50
+1 hour 3 minutes 50 seconds
+We want a combination that's stable enough that keeps performing and that combination itself keeps changing.
+1:03:57
+1 hour 3 minutes 57 seconds
+We will also talk about like why that's the case.
+1:04:00
+1 hour 4 minutes
+But that final combination is determined in this auto validation framework.
+1:04:06
+1 hour 4 minutes 6 seconds
+And this is like one of the use case of this is to control the variance.
+1:04:12
+1 hour 4 minutes 12 seconds
+All the bias like how tightly and how good the model fit is, is controlled for each individual model in the modeling framework.
+1:04:20
+1 hour 4 minutes 20 seconds
+But these are the best models.
+1:04:22
+1 hour 4 minutes 22 seconds
+We are just trying to make, you know a better combination of the best ones.
+1:04:27
+1 hour 4 minutes 27 seconds
+That's the auto validation framework.
+1:04:29
+1 hour 4 minutes 29 seconds
+So Preston, yes, to your question, yes, we do it, we see it all the time, OK.
+1:04:35
+1 hour 4 minutes 35 seconds
+The model or the model combination we perform, we used last time is not the best performing combination this time.
+1:04:42
+1 hour 4 minutes 42 seconds
+What's the reason for that?
+1:04:44
+1 hour 4 minutes 44 seconds
+Sometimes or I would say most of the times 99% of the time that's by design.
+1:04:50
+1 hour 4 minutes 50 seconds
+That's how it should be because previous combination selected a certain profile, OK, you know we have three models in this, they're targeting certain people and they have already responded in the previous campaign.
+1:05:05
+1 hour 5 minutes 5 seconds
+Now this time those models are still targeting the same profile because data don't change that much.
+1:05:13
+1 hour 5 minutes 13 seconds
+But there could be a better combination of models which is now targeting a different profile this time and which is we are validating and seeing is coming out to be better.
+1:05:23
+1 hour 5 minutes 23 seconds
+So that combination keeps changing by design.
+1:05:26
+1 hour 5 minutes 26 seconds
+But we don't see the performance of that combination Tang completely because if that would be the case, then we can conclude, OK, this combination was not stable that we used.
+1:05:37
+1 hour 5 minutes 37 seconds
+We are seeing that much variance.
+1:05:39
+1 hour 5 minutes 39 seconds
+So we don't see that.
+1:05:40
+1 hour 5 minutes 40 seconds
+But we do see fluctuations all the time across different model combinations.
+1:05:47
+1 hour 5 minutes 47 seconds
+So in this step, we use the best combinations for this particular time.
+1:05:54
+1 hour 5 minutes 54 seconds
+How do you choose the combinations?
+1:05:56
+1 hour 5 minutes 56 seconds
+Is it based on just historically for like a particular client, these have this, these combinations have performed the best.
+1:06:58
+1 hour 6 minutes 58 seconds
+We just spent them in this next step and this step gives us the best combination.
+1:07:04
+1 hour 7 minutes 4 seconds
+As per the trade off.
+1:07:06
+1 hour 7 minutes 6 seconds
+We have two KPIs to look at AUC that represents the, you know, ranking on the response and the PPPM that represents the ranking on the actual dollar value and the different combinations.
+1:07:18
+1 hour 7 minutes 18 seconds
+So this step, yes, we used Copilot before, but now we have the standard process inbuilt in the system where it does this trade off and we output the best combination that had to that had to be more efficient and probably more accurate.
+1:07:35
+1 hour 7 minutes 35 seconds
+Yeah, I think that's so Ashish, do you have any comparison data points to share, like how accurate this is versus the old methodology when you say there are points to compare?
+1:07:50
+1 hour 7 minutes 50 seconds
+Yeah, the the Copilot deciding factor versus the manual like you know which model you have to pay there.
+1:07:59
+1 hour 7 minutes 59 seconds
+Yes, yes, yes, that we cannot.
+1:08:01
+1 hour 8 minutes 1 second
+So when we, yes, when we compare.
+1:08:02
+1 hour 8 minutes 2 seconds
+So the biggest pain point, pain point with Copilot was it was a manual process.
+1:08:07
+1 hour 8 minutes 7 seconds
+We couldn't integrate it into our pipelines.
+1:08:09
+1 hour 8 minutes 9 seconds
+That's one.
+1:08:11
+1 hour 8 minutes 11 seconds
+But on the efficiency side, that process was not stable at all.
+1:08:16
+1 hour 8 minutes 16 seconds
+It would use one logic one time and other logic another time, although we keep feeling the same prompt.
+1:08:22
+1 hour 8 minutes 22 seconds
+Yes.
+1:08:25
+1 hour 8 minutes 25 seconds
+Yeah, that's common.
+1:08:27
+1 hour 8 minutes 27 seconds
+I mean, that's common, right?
+1:08:28
+1 hour 8 minutes 28 seconds
+Yeah.
+1:08:29
+1 hour 8 minutes 29 seconds
+So we also created an agent with the Intel pilot.
+1:08:33
+1 hour 8 minutes 33 seconds
+Is that what it was?
+1:08:34
+1 hour 8 minutes 34 seconds
+Yes, yes, we created an agent that does the job for us.
+1:08:38
+1 hour 8 minutes 38 seconds
+But again, that standard process, we see sometimes the results match what we would select, but some of the times it was just absurd.
+1:08:49
+1 hour 8 minutes 49 seconds
+You know, we couldn't figure out like why is it even suggesting that?
+1:08:54
+1 hour 8 minutes 54 seconds
+So this was a pinpoint that we had and yes, we did create use the agentic workflows to you know, create that auto recommendation process and we compare.
+1:09:06
+1 hour 9 minutes 6 seconds
+But now when we code it, we have a standard process, standard logics.
+1:09:11
+1 hour 9 minutes 11 seconds
+And now most of the times, 99% of the times we see, we check these combinations, you know, periodically manually as well and we see, yes, we are satisfied.
+1:09:22
+1 hour 9 minutes 22 seconds
+OK.
+1:09:22
+1 hour 9 minutes 22 seconds
+This is the combination we want to go with.
+1:09:24
+1 hour 9 minutes 24 seconds
+As for these these metrics, Ashish, do you have any Max cut off?
+1:09:30
+1 hour 9 minutes 30 seconds
+Like how many models that you can feed in to determine that mix, rank mix, no or no?
+1:09:37
+1 hour 9 minutes 37 seconds
+We can feed as many models as we want it because everything is automated.
+1:09:41
+1 hour 9 minutes 41 seconds
+We number and these are like very small files.
+1:09:44
+1 hour 9 minutes 44 seconds
+Like even if we have more models, it would be 1000 combinations.
+1:09:48
+1 hour 9 minutes 48 seconds
+They could be easily worked with.
+1:09:51
+1 hour 9 minutes 51 seconds
+But yes, one important thing is the overall absolute number.
+1:09:56
+1 hour 9 minutes 56 seconds
+So sometimes we see, you know, that all the models are in the range of 0.6 AUC, which is like not good.
+1:10:05
+1 hour 10 minutes 5 seconds
+But it does not mean, you know, all these models are wrong.
+1:10:10
+1 hour 10 minutes 10 seconds
+It just means there's no file separation for this particular campaign or client.
+1:10:17
+1 hour 10 minutes 17 seconds
+And sometimes it can happen if you have very low response rates.
+1:10:21
+1 hour 10 minutes 21 seconds
+Those would be driven, you know, completely random or any kind of reason.
+1:10:26
+1 hour 10 minutes 26 seconds
+But we do get the overall sense how is the, you know, one model may be wrong, 2 may be wrong, but why when everything is suggesting, you know, overall lower separation, that just means it's a file issue or particular campaign issue.
+1:10:42
+1 hour 10 minutes 42 seconds
+So for those particular clients, I mean, we have also checked is there any particular segmentation that can work better?
+1:10:50
+1 hour 10 minutes 50 seconds
+Sometimes it does, sometimes it does not.
+1:10:53
+1 hour 10 minutes 53 seconds
+And mostly the issue is because of the, you know, client file size.
+1:10:57
+1 hour 10 minutes 57 seconds
+For small size clients we do see ranking can fluctuate very well, very much so, yeah, that's what we have out of the fifth step, auto recommendation.
+
+1:12:39
+1 hour 12 minutes 39 seconds
+So now in the scoring step, there are two main things that we do, of course.
+1:12:43
+1 hour 12 minutes 43 seconds
+First is we score all the records and the second is we create the list of list output.
+1:12:51
+1 hour 12 minutes 51 seconds
+So list of list is you know, it's this is also our thing.
+1:12:55
+1 hour 12 minutes 55 seconds
+You know, we do this, I don't know, that's something we carry through the naming convention.
+1:13:01
+1 hour 13 minutes 1 second
+I don't know what that means.
+1:13:03
+1 hour 13 minutes 3 seconds
+So lol, list of lists, it's what it's been called forever.
+1:13:08
+1 hour 13 minutes 8 seconds
+So we just continue that.
+1:13:10
+1 hour 13 minutes 10 seconds
+So what it is, is, you know, you can also share that Excel spreadsheet with those list of list output.
+1:13:19
+1 hour 13 minutes 19 seconds
+It has the list key.
+1:13:21
+1 hour 13 minutes 21 seconds
+Yeah, it has the list key assigned to each segment.
+1:13:26
+1 hour 13 minutes 26 seconds
+So once the scoring completes, it creates an Excel spreadsheet in a summarized form.
+1:13:33
+1 hour 13 minutes 33 seconds
+And that Excel spreadsheet is the list of list that that we call.
+1:13:38
+1 hour 13 minutes 38 seconds
+And that's what we use as a baseline to finalize the selection to assign the key flag.
+1:13:44
+1 hour 13 minutes 44 seconds
+Yes.
+1:13:44
+1 hour 13 minutes 44 seconds
+No, Liske is.
+1:13:47
+1 hour 13 minutes 47 seconds
+Yeah.
+1:13:47
+1 hour 13 minutes 47 seconds
+Yeah.
+1:13:49
+1 hour 13 minutes 49 seconds
+I don't even want to talk about it.
+1:13:54
+1 hour 13 minutes 54 seconds
+Yeah.
+1:13:55
+1 hour 13 minutes 55 seconds
+So those are in famous terminologies.
+1:13:57
+1 hour 13 minutes 57 seconds
+If key codes, key code, it's not something that we can talk about it.
+1:14:04
+1 hour 14 minutes 4 seconds
+Liske is what Preston got upset with, right?
+1:14:08
+1 hour 14 minutes 8 seconds
+Yeah.
+1:14:08
+1 hour 14 minutes 8 seconds
+And still, it's logical systems.
+1:14:12
+1 hour 14 minutes 12 seconds
+It is.
+1:14:13
+1 hour 14 minutes 13 seconds
+It is what it is.
+1:14:14
+1 hour 14 minutes 14 seconds
+That's why we start with the blank sheet, right?
+1:14:16
+1 hour 14 minutes 16 seconds
+So we can just start with that and we can completely cross out list key.
+1:14:20
+1 hour 14 minutes 20 seconds
+I'm all for.
+1:14:21
+1 hour 14 minutes 21 seconds
+Yeah, absolutely.
+1:14:21
+1 hour 14 minutes 21 seconds
+Yeah, you should, you should present it to Preston and try to figure it out.
+1:14:28
+1 hour 14 minutes 28 seconds
+We use key code on our end.
+1:14:30
+1 hour 14 minutes 30 seconds
+So yeah.
+1:14:31
+1 hour 14 minutes 31 seconds
+But the it's the logic behind list key.
+1:14:34
+1 hour 14 minutes 34 seconds
+It's like, is it one of many?
+1:14:35
+1 hour 14 minutes 35 seconds
+It's like, yes, is it one O 1?
+1:14:37
+1 hour 14 minutes 37 seconds
+Yes.
+1:14:38
+1 hour 14 minutes 38 seconds
+It's like there's like this weird logic around it.
+1:14:40
+1 hour 14 minutes 40 seconds
+It's the it's the combination of decile 0 with.
+1:14:47
+1 hour 14 minutes 47 seconds
+If they provide additional account variables from the client like decile 0 with account open date within 12 months, age 0 to 35, that's one list and that's Liske 100 and then go to the one O 1, it's decile one with the same combination, Decile 2 with the same combination.
+1:15:10
+1 hour 15 minutes 10 seconds
+That's what that is.
+1:15:11
+1 hour 15 minutes 11 seconds
+I mean we can call something else.
+1:15:13
+1 hour 15 minutes 13 seconds
+It's just the the grouping.
+1:15:15
+1 hour 15 minutes 15 seconds
+Yeah, I think we were trying to automate some of the reporting and functionality.
+1:15:20
+1 hour 15 minutes 20 seconds
+I think it was hard to apply that across clients is what we're showing.
+1:15:25
+1 hour 15 minutes 25 seconds
+It's not consistent with the list key.
+1:15:27
+1 hour 15 minutes 27 seconds
+Yeah, it's not.
+1:15:28
+1 hour 15 minutes 28 seconds
+That's what it was.
+1:15:28
+1 hour 15 minutes 28 seconds
+It's not consistent.
+1:15:29
+1 hour 15 minutes 29 seconds
+Yeah.
+1:15:30
+1 hour 15 minutes 30 seconds
+And also the combination, it's not consistent across clients, right.
+1:15:34
+1 hour 15 minutes 34 seconds
+So client ABC, we use account open date as a segmentation on top of decile, but the other client might not have account open date.
+1:15:43
+1 hour 15 minutes 43 seconds
+So that list key 100 or credit union ABC doesn't mean 100 for the other word for a certain combination of that.
+1:15:53
+1 hour 15 minutes 53 seconds
+Yeah.
+1:15:54
+1 hour 15 minutes 54 seconds
+So if you just capture the attributes and it's not, it's not consistent across clients, that's the problem, right?
+1:17:27
+1 hour 17 minutes 27 seconds
+Yeah.
+1:17:27
+1 hour 17 minutes 27 seconds
+But what you said is let's there's, let's say there's 1500 attributes and there's certain combination of 1500.
+1:17:33
+1 hour 17 minutes 33 seconds
+Yeah.
+1:17:34
+1 hour 17 minutes 34 seconds
+I mean to a Shisha's point, it's automated for that client.
+1:17:37
+1 hour 17 minutes 37 seconds
+But you know, every time we add a variable, yes, it's automated process, but it's not the same process for all clients.
+1:17:46
+1 hour 17 minutes 46 seconds
+Yeah, it's not changes on the client.
+1:17:50
+1 hour 17 minutes 50 seconds
+So 100 doesn't mean 100 doesn't mean it's the same problem.
+1:17:53
+1 hour 17 minutes 53 seconds
+Yes, yes, like yeah.
+1:17:56
+1 hour 17 minutes 56 seconds
+So Kim's 100 is different than Preston's 100 exactly.
+1:17:59
+1 hour 17 minutes 59 seconds
+It's not like ADD is product concept 100, but do you need 100 to function the same way for one client to the other?
+1:18:07
+1 hour 18 minutes 7 seconds
+No, no, no.
+1:18:08
+1 hour 18 minutes 8 seconds
+Like can they?
+1:18:09
+1 hour 18 minutes 9 seconds
+No, again, the problem, the problem comes in when you're trying to automate across the portfolio.
+1:18:13
+1 hour 18 minutes 13 seconds
+That's the that's the wishes statement and that list key is not consistent.
+1:18:18
+1 hour 18 minutes 18 seconds
+That's the problem.
+1:18:19
+1 hour 18 minutes 19 seconds
+Could we, rather than having it beat model decile plus all these other attributes, could we call it like a rank one for credit Union A is decile one from the model and then all these other attributes and then rank one for this credit union over here is still decile one from the model, but then it's a different set of attributes.
+1:18:44
+1 hour 18 minutes 44 seconds
+So maybe that's what that is.
+1:18:45
+1 hour 18 minutes 45 seconds
+I mean, decile 1, like you said, we're trying to solve something that we punted you, right?
+1:18:51
+1 hour 18 minutes 51 seconds
+Yeah.
+1:18:52
+1 hour 18 minutes 52 seconds
+I mean, you can call rank 1 or 100 for credit union ABC.
+1:18:57
+1 hour 18 minutes 57 seconds
+That doesn't mean it's the same rank one is for Preston and Rothman.
+1:19:02
+1 hour 19 minutes 2 seconds
+You know, that's the that's but two different credit unions.
+1:19:06
+1 hour 19 minutes 6 seconds
+It's not the same definition.
+1:19:09
+1 hour 19 minutes 9 seconds
+So, so just to give an idea, like how we automate it is we just provide what segments we want to break each client.
+1:19:18
+1 hour 19 minutes 18 seconds
+So that's an input that we feed and we can feed it for each client, but we can run this in a batch.
+1:19:25
+1 hour 19 minutes 25 seconds
+So we can have, you know, 20 clients with 20 different sets of input.
+1:19:31
+1 hour 19 minutes 31 seconds
+All of this would create 20 different customized list key in just one run of code.
+1:19:38
+1 hour 19 minutes 38 seconds
+So we are able to achieve the output, although it's a different output, but if it's customized, that's not a problem.
+1:19:47
+1 hour 19 minutes 47 seconds
+We can have as many segments.
+1:19:49
+1 hour 19 minutes 49 seconds
+But this is also, you know, one thing, Preston.
+1:19:54
+1 hour 19 minutes 54 seconds
+We need it so that we can have more efficiency when we are selecting for each client rather than, you know, scoring in a batch for different clients and just selecting by top desires.
+1:20:07
+1 hour 20 minutes 7 seconds
+And this is where we can make the difference when we are selecting for each client separately.
+1:20:13
+1 hour 20 minutes 13 seconds
+So that's also one of the idea.
+1:20:15
+1 hour 20 minutes 15 seconds
+And even that selection process, it's automated.
+1:20:19
+1 hour 20 minutes 19 seconds
+So what we have is.
+1:20:22
+1 hour 20 minutes 22 seconds
+So let's say I'll just show you one output.
+1:20:30
+1 hour 20 minutes 30 seconds
+All we have to do is when we run those batch, we just get a scenario.
+1:20:37
+1 hour 20 minutes 37 seconds
+Let's say we want a 50% penetration, we get all kinds of scenario.
+1:20:41
+1 hour 20 minutes 41 seconds
+So across each decide as you can see how the model is selecting differently or not just the model model plus the performance of these variables in the previous campaigns.
+1:20:53
+1 hour 20 minutes 53 seconds
+Based on these two factors we can see oh for first segment or that first combination news news PH35 and under we are just selecting top 3012.
+1:20:53
+1 hour 20 minutes 53 seconds
+Based on these two factors we can see oh for first segment or that first combination news news PH35 and under we are just selecting top 3012.
+1:21:07
+1 hour 21 minutes 7 seconds
+For other combinations we are going deeper.
+1:21:10
+1 hour 21 minutes 10 seconds
+All this customization happens automatically even when these segments are you know different.
+1:21:18
+1 hour 21 minutes 18 seconds
+So in that sense, yes, we have a very good hold of automation.
+1:21:25
+1 hour 21 minutes 25 seconds
+So given that we don't want to you know compromise on accuracy because if we would just go by model decides you know, we would miss these little changes that we are doing or we are able to do as per this process and that would compromise the accuracy for oversimplicity and we don't want to do that.
+1:21:47
+1 hour 21 minutes 47 seconds
+Yep, sorry Sir, just sidetrack and some view.
+1:21:52
+1 hour 21 minutes 52 seconds
+So all that happens in the dynamic scoring framework where we output these list of lists and even create these selections, define selections which of course we review.
+1:22:05
+1 hour 22 minutes 5 seconds
+And sometimes if we feel OK, you know, these selections, probably we may have to adjust little bit that part we do as of now, you know, manually and this is still in its beta phase.
+1:22:21
+1 hour 22 minutes 21 seconds
+I mean we are still building the solution.
+1:22:23
+1 hour 22 minutes 23 seconds
+It's not 100% accurate and we don't every 100% of the time, you know what it's outputting.
+1:22:29
+1 hour 22 minutes 29 seconds
+So we are making constant adjustments, but that data is fed into the system and it's trying to improve with time, you know, learning more like what are our heuristics to select the names?
+1:22:42
+1 hour 22 minutes 42 seconds
+They may not be the best that we can do.
+1:22:45
+1 hour 22 minutes 45 seconds
+Some head to head back testing what exactly this output selected and what we end up going with and how each of that perform.
+1:22:54
+1 hour 22 minutes 54 seconds
+So all those data points would make the system, you know, even smarter with time and more data.
+1:23:01
+1 hour 23 minutes 1 second
+But yeah, that's where we are.
+1:23:04
+1 hour 23 minutes 4 seconds
+So once we have so, sorry we got little sidetracked here, we provide those outputs again, wetransfer these files.
+1:23:15
+1 hour 23 minutes 15 seconds
+Once we have those final SO files, this code files.
+1:23:20
+1 hour 23 minutes 20 seconds
+The thing is final fulfilment also happens in this S So all the SO files are in the XM environment.
+1:23:28
+1 hour 23 minutes 28 seconds
+So all these code files and all the outputs again needs to be transferred.
+1:23:33
+1 hour 23 minutes 33 seconds
+So this is where we transferred the files and this list of list generation process like the base, you know how we want to create those segments.
+1:23:45
+1 hour 23 minutes 45 seconds
+So there's little nuance here.
+1:23:47
+1 hour 23 minutes 47 seconds
+So this is the final output where we see how the selections are.
+1:23:51
+1 hour 23 minutes 51 seconds
+But this was the input, you know, just the distribution of the net quantity as per different segments and the ID list key.
+1:23:59
+1 hour 23 minutes 59 seconds
+So this part, this raw is we created in SASS.
+1:24:04
+1 hour 24 minutes 4 seconds
+I mean, it's just the way we have as of now, there's no reason cannot be moved to the VM, but it's created in sys because we have ingredients to create this in the XM environment and we also do the final name selection and you know, final processing or uploading the files in the XM environment.
+1:24:25
+1 hour 24 minutes 25 seconds
+We have it, but the final name selection, again, it's a pain point.
+1:24:29
+1 hour 24 minutes 29 seconds
+We create this file in sys and the final name selection output in the VM, we move that again from you know VM environment to the XM environment.
+1:24:46
+1 hour 24 minutes 46 seconds
+So there are a couple of transfers involved here.
+1:24:49
+1 hour 24 minutes 49 seconds
+Those are pinpoint.
+1:24:51
+1 hour 24 minutes 51 seconds
+If we could eliminate those, everything is centralized, we would just have you know, I mean we're not saying it would be 100% accurate.
+1:25:02
+1 hour 25 minutes 2 seconds
+We would have the ingredients to achieve.
+1:25:06
+1 hour 25 minutes 6 seconds
+We just got the file and we run a script and we got the final name selected.
+1:25:12
+1 hour 25 minutes 12 seconds
+But it's a completely different story who beat the current existing system because this name selection process, those manual adjustments that we do, it's a very critical process.
+1:25:26
+1 hour 25 minutes 26 seconds
+And although we have, you know, this automated programs doing it, but until we test it thoroughly, I mean, we cannot just roll these out.
+1:25:36
+1 hour 25 minutes 36 seconds
+You know, we don't want to compromise accuracy over speed.
+1:25:40
+1 hour 25 minutes 40 seconds
+So it's in para phase, but we have this concept of achieving end to end, you know, production if we centralized the system and this name selection step, we do not just analyze one campaign.
+1:25:55
+1 hour 25 minutes 55 seconds
+It's a very tedious manual step.
+1:25:57
+1 hour 25 minutes 57 seconds
+We analyze probably past 234 campaigns, how did they perform and how each of these combinations did.
+1:26:05
+1 hour 26 minutes 5 seconds
+And to that aspect, Preston, yes, that is
+1:27:19
+1 hour 27 minutes 19 seconds
+So OK, so let's discuss this quickly as well.
+1:27:22
+1 hour 27 minutes 22 seconds
+So what happens here?
+1:27:24
+1 hour 27 minutes 24 seconds
+All the samples that are created, either we use them or not, that's a different story.
+1:27:30
+1 hour 27 minutes 30 seconds
+They go to this framework and this is just one framework that will, that's the idea in future suffice all our modelling needs.
+1:27:40
+1 hour 27 minutes 40 seconds
+As of now, there is no AI integrated in it.
+1:27:44
+1 hour 27 minutes 44 seconds
+It's a standard process which we think is pretty good because we have, you know, all this knowledge of previous years, how we want to do these feature selections for these different variables.
+1:27:56
+1 hour 27 minutes 56 seconds
+We know exactly what variables mean and how they can lead to overfitting in some cases.
+1:28:04
+1 hour 28 minutes 4 seconds
+So we do all those adjustments.
+1:28:08
+1 hour 28 minutes 8 seconds
+I mean, we have written rules for all those adjustments and this framework keeps creating the models.
+1:28:14
+1 hour 28 minutes 14 seconds
+Now it's a matter of OK, we want a new model.
+1:28:18
+1 hour 28 minutes 18 seconds
+You know, we don't want a regression.
+1:28:19
+1 hour 28 minutes 19 seconds
+We we want probably neural Nets.
+1:28:23
+1 hour 28 minutes 23 seconds
+All we have to do is we just ask for a new model out of this framework.
+1:28:27
+1 hour 28 minutes 27 seconds
+All the data is available, all the prep is available, the feature engineering and it will keep outputting all the different models and probably sometimes just for specific products or just for specific client.
+1:28:42
+1 hour 28 minutes 42 seconds
+All this can happen in this framework and we can have as many generic models to test side by side by side, you know, in the auto validation framework before we roll out anything.
+1:28:55
+1 hour 28 minutes 55 seconds
+Or we can have all the different kinds of features as well.
+1:29:00
+1 hour 29 minutes
+Eventually, in future, the plan is to integrate AI at this particular step.
+1:29:07
+1 hour 29 minutes 7 seconds
+This would be our, you know, the brain where we can, with these results, we can have some system, some intelligence system where these rules can also update themselves as per the feedback, as per the performance.
+1:29:22
+1 hour 29 minutes 22 seconds
+As of now, it's a manual process.
+1:29:24
+1 hour 29 minutes 24 seconds
+You know, you keep refreshing the data as per the validation, it keeps producing the refreshed models and the new models and the accompanied system models for different product line combinations.
+1:29:37
+1 hour 29 minutes 37 seconds
+But the system does not change its rules by itself how it wants to create the model.
+1:29:43
+1 hour 29 minutes 43 seconds
+It just ingest new data and whatever featuring rules we have put in place, it takes into account those.
+1:29:53
+1 hour 29 minutes 53 seconds
+So yeah.
+1:29:54
+1 hour 29 minutes 54 seconds
+And eventually in future idea is, you know, this framework adjust itself to, you know, give us the best results, not just as per the refresh data, but also as per whatever rules or little adjustments in the overall process that needs to happen both of them.
+1:30:16
+1 hour 30 minutes 16 seconds
+So one question of the live modeling like how do you know when to retrain your model or how often do you retrain your model?
+1:30:25
+1 hour 30 minutes 25 seconds
+Correct, yes, so that's a very important point.
+1:30:28
+1 hour 30 minutes 28 seconds
+It's always getting retrain.
+1:30:31
+1 hour 30 minutes 31 seconds
+It's not that there is one output.
+1:30:35
+1 hour 30 minutes 35 seconds
+And so let's say, let's take an example.
+1:30:37
+1 hour 30 minutes 37 seconds
+We're talking about may campaign it process this file with this latest version, it may be a different version previous time when it processed the previous file.
+1:30:48
+1 hour 30 minutes 48 seconds
+So we don't compare same version for different campaigns and that's not the idea.
+1:30:54
+1 hour 30 minutes 54 seconds
+Idea is can these different versions keep producing consistent lift.
+1:31:00
+1 hour 31 minutes
+That's what we want to see.
+1:32:15
+1 hour 32 minutes 15 seconds
+I mean, sorry the model stop working, but this will take care of that.
+1:32:20
+1 hour 32 minutes 20 seconds
+You know, we are getting instant updates, so that web model gets refreshed instantly.
+1:32:28
+1 hour 32 minutes 28 seconds
+It's going to be huge or you know, the models start feeling that fatigue factor, you know, if not many news names are getting added to the file consistently, model is still targeting that same set of profile.
+1:32:41
+1 hour 32 minutes 41 seconds
+Whoever had to respond may have responded in couple of campaigns.
+1:32:44
+1 hour 32 minutes 44 seconds
+Now we are just, you know, targeting same set of people over and over again.
+1:32:49
+1 hour 32 minutes 49 seconds
+So that yeah, data refresh is really, really important factor for a model to perform consistently.
+1:32:57
+1 hour 32 minutes 57 seconds
+So how, how long it takes for you to create a new model from scratch to it?
+1:33:03
+1 hour 33 minutes 3 seconds
+Yes.
+1:33:03
+1 hour 33 minutes 3 seconds
+So for today, yeah, I would say somewhere between comfortably 5 days, we can do it in a week and you know, in compressed timelines we have even turned out in 2 days.
+1:33:16
+1 hour 33 minutes 16 seconds
+But it's a process can be done, you know, less than two days and five days is comfortable it you mean the current model building process you Yeah, yeah, yeah.
+1:33:27
+1 hour 33 minutes 27 seconds
+But the problem is he's talking about just the model build, right?
+1:33:32
+1 hour 33 minutes 32 seconds
+A data prep is what it takes longer.
+1:33:34
+1 hour 33 minutes 34 seconds
+So we have to prep the data.
+1:33:37
+1 hour 33 minutes 37 seconds
+If it's a generic model, OK, how, what's the time frame that we want to look into?
+1:33:43
+1 hour 33 minutes 43 seconds
+And if it's the last two years, which client we want to include?
+1:33:48
+1 hour 33 minutes 48 seconds
+Do we want to get a representation across all clients?
+1:33:51
+1 hour 33 minutes 51 seconds
+And then how do we sample it?
+1:33:54
+1 hour 33 minutes 54 seconds
+Like, you know, we have to cut down from 50 million to a reasonable number.
+1:34:02
+1 hour 34 minutes 2 seconds
+So we have to go through the sampling process.
+1:34:05
+1 hour 34 minutes 5 seconds
+So that's where it takes longer.
+1:34:07
+1 hour 34 minutes 7 seconds
+Once we have the data in the model build a process like as she said, you know we can turn around within five days or even 2-3 days, but the data profits where it takes longer.
+1:34:20
+1 hour 34 minutes 20 seconds
+Yep and we have dependency for that, you know, so analyst team, they look at all those campaigns to have complete representation of let's say we are building generic or updating a generic model for HAP.
+1:34:33
+1 hour 34 minutes 33 seconds
+So we want to have all the clients representation for that.
+1:34:38
+1 hour 34 minutes 38 seconds
+So somebody goes through all those samples, samples and you know create that number of jobs that we want to put in our sample.
+1:34:48
+1 hour 34 minutes 48 seconds
+So yes, the generic model is a completely different story.
+1:34:51
+1 hour 34 minutes 51 seconds
+Yeah, yeah.
+1:34:52
+1 hour 34 minutes 52 seconds
+And we don't wanna have one client dominate the entire model or the sample.
+1:34:58
+1 hour 34 minutes 58 seconds
+So we have to give equal opportunity.
+1:35:01
+1 hour 35 minutes 1 second
+So we go through a a resampling process if 500,000 file size client and it brought in, it's under responders versus some clients we only have 50 responders.
+1:35:13
+1 hour 35 minutes 13 seconds
+So we have to give equal chance to all clients.
+1:35:17
+1 hour 35 minutes 17 seconds
+So we go through a resampling process to give equal chance.
+1:35:22
+1 hour 35 minutes 22 seconds
+So you did, I hear you're right to rebuild an ALTS anywhere from two to five days.
+1:35:27
+1 hour 35 minutes 27 seconds
+Yeah, that's, I mean building the model takes two to five days, but the prep takes longer.
+1:35:38
+1 hour 35 minutes 38 seconds
+Yeah.
+1:35:39
+1 hour 35 minutes 39 seconds
+But it seems like there's an opportunity.
+1:35:44
+1 hour 35 minutes 44 seconds
+So the other question on the auto recommendation, so and is there a reason why you have the auto recommendation at the end?
+1:35:53
+1 hour 35 minutes 53 seconds
+So you want to complete your validation and then make the system recommend a model that works for every scenario or yes.
+1:36:35
+1 hour 36 minutes 35 seconds
+So going all the way to, I mean all the models and for different segments as well.
+1:36:42
+1 hour 36 minutes 42 seconds
+Now we need a system that can summarize all these results, which model combination is best across all the segments and across both the metrics, the AUC and PDP.
+1:36:58
+1 hour 36 minutes 58 seconds
+So the question is like what data set is it using now?
+1:37:02
+1 hour 37 minutes 2 seconds
+So it's using the actual client file that you receive to run through the system and come up with all this AUC score.
+1:37:08
+1 hour 37 minutes 8 seconds
+Yeah, that's the merge all and the the sample yeah, appended the responders correct on the merge all file and those are the the files we that's the reason why I asked my question earlier about back testing.
+1:37:22
+1 hour 37 minutes 22 seconds
+So once the model is ready, yes.
+1:37:24
+1 hour 37 minutes 24 seconds
+Are we taking any prior history files running through the model?
+1:37:29
+1 hour 37 minutes 29 seconds
+And then we have the actual responsibility, right?
+1:37:32
+1 hour 37 minutes 32 seconds
+Take the new model, Yeah, run the old file, yeah, get the output and compare these two together.
+1:37:37
+1 hour 37 minutes 37 seconds
+Yes.
+1:37:38
+1 hour 37 minutes 38 seconds
+With the actual, that's a standard, yes, that's a standard modeling process.
+1:37:42
+1 hour 37 minutes 42 seconds
+Not that.
+1:37:42
+1 hour 37 minutes 42 seconds
+No, that's not what that is.
+1:37:44
+1 hour 37 minutes 44 seconds
+So when we build the model, we have a holdout that we put it aside, right?
+1:37:49
+1 hour 37 minutes 49 seconds
+It did not touch or utilize in our model building process.
+1:37:54
+1 hour 37 minutes 54 seconds
+Ideally we need to have an independent campaign so we can have an out of time validation to validate the stability of the model.
+1:38:05
+1 hour 38 minutes 5 seconds
+But sometimes we don't have that luxury.
+1:38:07
+1 hour 38 minutes 7 seconds
+So we take the same sample and take 80% utilize for model building and 20% put it aside for hold out for validation.
+1:38:16
+1 hour 38 minutes 16 seconds
+So that's the back testing.
+1:38:17
+1 hour 38 minutes 17 seconds
+So that's part of the standard model model building.
+1:38:23
+1 hour 38 minutes 23 seconds
+Yes.
+1:38:25
+1 hour 38 minutes 25 seconds
+Yep, all the validations still happen, you know, in each individual model roll out as well.
+1:38:31
+1 hour 38 minutes 31 seconds
+Yeah, yeah.
+1:38:36
+1 hour 38 minutes 36 seconds
+So yeah, this output we would feed in the auto recommendation framework and it would give us some output like for all the combinations, you know, best ranked, worst rank and on which segment.
+1:39:00
+1 hour 39 minutes
+And it makes a trade off to give us like OK, what's the final output?
+1:39:08
+1 hour 39 minutes 8 seconds
+And all these are, you know, outputs, they automatically feed.
+1:39:12
+1 hour 39 minutes 12 seconds
+We don't have to run them separately.
+1:39:15
+1 hour 39 minutes 15 seconds
+So all the process that we have in the VM we can just take from Step 2 and get to the final output of step six.
+1:39:25
+1 hour 39 minutes 25 seconds
+Since we have had these in the VMS and and then she did, yeah.
+1:39:33
+1 hour 39 minutes 33 seconds
+Did you cover the the Excel spreadsheet output or do we need to list of this one?
+1:39:45
+1 hour 39 minutes 45 seconds
+Yeah, Yes, yes, we talked about it.
+1:39:49
+1 hour 39 minutes 49 seconds
+So that's one thing we're trying to and that's what I was mentioning.
+1:39:52
+1 hour 39 minutes 52 seconds
+Like there is also one place we cannot stack, you know, different clients together and run them and just select by decides because we would miss this opportunity to select or fine tune the selections as per each specific client out of that as spreadsheet view that we saw.
+1:40:11
+1 hour 40 minutes 11 seconds
+Yeah, yeah.
+1:40:17
+1 hour 40 minutes 17 seconds
+That's from my side.
+1:40:19
+1 hour 40 minutes 19 seconds
+So the blue boxes that we have, that's an accident.
+1:40:22
+1 hour 40 minutes 22 seconds
+That's an accident, right.
+1:40:23
+1 hour 40 minutes 23 seconds
+So if you have to move it to our environment, are there any data restrictions there?
+1:40:27
+1 hour 40 minutes 27 seconds
+You won't be able to move.
+1:40:28
+1 hour 40 minutes 28 seconds
+No, that's not Axiom.
+1:40:30
+1 hour 40 minutes 30 seconds
+It's still that's with it.
+1:40:32
+1 hour 40 minutes 32 seconds
+I mean, it is within the axiom environment, but we do everything.
+1:40:38
+1 hour 40 minutes 38 seconds
+So there is no restriction.
+1:40:40
+1 hour 40 minutes 40 seconds
+There is no PII data sitting in there.
+1:40:42
+1 hour 40 minutes 42 seconds
+So there is no restriction for us to merge the two together into the AWS environment.
+1:40:49
+1 hour 40 minutes 49 seconds
+Yeah, yeah, that's what we are, yeah.
+1:40:53
+1 hour 40 minutes 53 seconds
+Only restriction would be this like the axioms data that we source.
+1:40:58
+1 hour 40 minutes 58 seconds
+So they won't provide us that connectivity directly.
+1:41:48
+1 hour 41 minutes 48 seconds
+Yeah, these are just we already discussed.
+1:41:50
+1 hour 41 minutes 50 seconds
+So I don't think we need to go.
+1:41:51
+1 hour 41 minutes 51 seconds
+These are just more detailed process, you know, OK, we're discussing here auto validation each and here we are discussing the production, the scoring in more detail.
+1:42:03
+1 hour 42 minutes 3 seconds
+So, so that's the selection process and then it goes back to Julie and the team and then to finalize the final output.
+1:42:14
+1 hour 42 minutes 14 seconds
+So we assigned the flags to who we want to target.
+1:42:18
+1 hour 42 minutes 18 seconds
+So Julie takes that piece and Julie, do you want Julie, do you want to put that back on?
+1:42:25
+1 hour 42 minutes 25 seconds
+So just to summarize, once the data's come up, it's not through the data hygiene appended all the data, it runs through the model, you rank it, store it, and then you select score it, rank it, store it, rank it.
+1:42:39
+1 hour 42 minutes 39 seconds
+Yeah, yeah, yeah, exactly.
+1:42:44
+1 hour 42 minutes 44 seconds
+OK.
+1:42:45
+1 hour 42 minutes 45 seconds
+And that selection gets a flag.
+1:42:48
+1 hour 42 minutes 48 seconds
+This is what we are selecting.
+1:42:50
+1 hour 42 minutes 50 seconds
+This is what we are.
+1:42:51
+1 hour 42 minutes 51 seconds
+Yes, No.
+1:42:52
+1 hour 42 minutes 52 seconds
+And the yes goes out to the letter shell.
+1:42:56
+1 hour 42 minutes 56 seconds
+Yeah.
+1:42:57
+1 hour 42 minutes 57 seconds
+Personalization like CIDF code, does model play any role in that?
+1:43:02
+1 hour 43 minutes 2 seconds
+No, that's all happening.
+1:43:04
+1 hour 43 minutes 4 seconds
+Julie is going to cover that piece like when that CADF get assigned, it's all the way at the end just before it goes to the letter shop, that's when that CADF gets generated at Axiom.
+1:43:17
+1 hour 43 minutes 17 seconds
+But tomorrow if I want to target a new promotion to you separately plus one separately get separately does model will play a role in that or how do you decide Preston gets this marketing and Jed gets yes, that has to be a model based right model triggered decision.
+1:43:38
+1 hour 43 minutes 38 seconds
+Yes, that's the vision when we built that data house like I think when I think you want to build the ability to do that.
+1:43:46
+1 hour 43 minutes 46 seconds
+Yeah, when we have when we have more robust, excuse me response data at the you know, creative level by segment.
+1:43:54
+1 hour 43 minutes 54 seconds
+I guess is that list of list chart will just include another attribute like are they new the two indications of newness, right, age, prior promotion history and then potentially what message they got or which version of the creative they got.
+1:44:13
+1 hour 44 minutes 13 seconds
+And I think the budding learnings from what that is presented is that that's showing a lot of problems, right?
+1:44:19
+1 hour 44 minutes 19 seconds
+Yes, yeah.
+1:44:20
+1 hour 44 minutes 20 seconds
+And also, you know there are other variables, different variables, it's not standard, right, account open date.
+1:44:29
+1 hour 44 minutes 29 seconds
+So if you're new to the bank or financial institution, you're more responsive.
+1:44:35
+1 hour 44 minutes 35 seconds
+So do we wanna talk to them differently to those type of people versus they've been with the bank for so long and we are trying to make them respond to these products.
+1:44:48
+1 hour 44 minutes 48 seconds
+So I think that's when the personalization, I mean the idea is there.
+1:44:53
+1 hour 44 minutes 53 seconds
+The personalization right now it's based on the personic segment, but it's not just limited to the personic segment.
+1:45:00
+1 hour 45 minutes
+There are many other variables that we can utilize to create that journey or create that personalization.
+1:45:09
+1 hour 45 minutes 9 seconds
+So it all needs to be in this mission statement or within this data.
+1:45:15
+1 hour 45 minutes 15 seconds
+I'd have to add a paragraph or two yes.
+1:45:27
+1 hour 45 minutes 27 seconds
+So where are we?
+1:45:30
+1 hour 45 minutes 30 seconds
+We didn't compare it to the we just went to for now after the hygiene.
+1:45:36
+1 hour 45 minutes 36 seconds
+We've not talked about different process at all.
+1:45:38
+1 hour 45 minutes 38 seconds
+Yes, well, every vendor that we leverage for model building I'm sure has their own secret sauce, black box cocktail.
+1:45:49
+1 hour 45 minutes 49 seconds
+But when we share those files for modeling, they'll do their own identity resolution.
+1:45:55
+1 hour 45 minutes 55 seconds
+Each vendor will then share out their findings with us.
+1:45:58
+1 hour 45 minutes 58 seconds
+That can come in myriad form, but typically it's a profile of the general US population and it's an index with the modeling sample.
+1:46:10
+1 hour 46 minutes 10 seconds
+So similar, you know exercise to Jasmine's team will see age, income, net worth, maybe some purchase behavior kind of pop in the model.
+1:46:21
+1 hour 46 minutes 21 seconds
+Those findings are then shared back with the client to say we have the opportunity to maybe add a pre selection criteria on our targeting or age or income or whatever attribute.
+1:46:35
+1 hour 46 minutes 35 seconds
+But odds are the model will naturally guide us towards the people that share an attribute or have an attribute that is providing that index over the general population.
+1:46:47
+1 hour 46 minutes 47 seconds
+We call that just something that's going to be more predictive of what a customer looks like for you.
+1:46:51
+1 hour 46 minutes 51 seconds
+So once all of that modelling takes place, then they are scoring everyone in the United States or basically all US purchasing households because that's what all of our vendors have at their disposal.
+1:47:08
+1 hour 47 minutes 8 seconds
+And then to Jasmine's earlier point, we're normally only selecting the top, you know, 100,250 thousand, so 10 to 25% of of the full what we call addressable market for that client.
+1:47:25
+1 hour 47 minutes 25 seconds
+Once we make all those selections by vendor, our acquisition data acquisition managers will cut a purchase order.
+1:47:35
+1 hour 47 minutes 35 seconds
+So the client or the vendor will send all of that data.
+1:47:38
+1 hour 47 minutes 38 seconds
+Then that's when we do standardize across every vendor.
+1:47:42
+1 hour 47 minutes 42 seconds
+So we have standard layouts by vendor, we'll get them and then because we have those standard layouts, we can then put it into our own layout from there.
+1:47:55
+1 hour 47 minutes 55 seconds
+You know, we're carrying through a key code.
+1:47:58
+1 hour 47 minutes 58 seconds
+So we know that Preston Carroll came from this exact vendor, this model and he is in this rank for from that model.
+1:48:07
+1 hour 48 minutes 7 seconds
+We do that for every record so that when we go through our final suppression and deduping, cross vendor deduping or suppression against files that the client is supplying us with, current customers do not contacts, opt outs, anything like that.
+1:48:27
+1 hour 48 minutes 27 seconds
+We're doing that all at random.
+1:48:29
+1 hour 48 minutes 29 seconds
+And then our final selection is ultimately driven by prior meal performance if we have it.
+1:48:35
+1 hour 48 minutes 35 seconds
+So if we know that Model A well outperforms Model B and there's flush volume in Model A, we'll typically prioritize selecting Model A over Model B when all is said and done.
+1:48:48
+1 hour 48 minutes 48 seconds
+But that final output file that we have for a given client carries through those list keys and then we're assigning to creative packages or offers or digital tactics, what have you.
+1:49:01
+1 hour 49 minutes 1 second
+And then that final file is sent to the printer and 100% of cases.
+1:49:07
+1 hour 49 minutes 7 seconds
+And then in some cases, it also goes to live RAM slash stack adapt for the digital surround, which is a similar path that the insurance side follows.
+1:49:20
+1 hour 49 minutes 20 seconds
+We on the direct side when it's acquisition data.
+1:49:25
+1 hour 49 minutes 25 seconds
+So we're acquiring prospects from vendor ABC.
+1:49:29
+1 hour 49 minutes 29 seconds
+We do not run e-mail campaigns.
+1:49:32
+1 hour 49 minutes 32 seconds
+There are some cases where a client will supply us with their customers with e-mail and then we'll leverage the FM and Morgan to be specific to run e-mail campaigns on act on.
+1:49:48
+1 hour 49 minutes 48 seconds
+But that process of sharing the files for modeling that model being created or models being created, us getting the data, standardizing, running on COA, cast, merge burden suppression, all of that takes place once we get the data in our halls minus NCOA.
+1:50:09
+1 hour 50 minutes 9 seconds
+We need to outsource that.
+1:50:10
+1 hour 50 minutes 10 seconds
+But sounds like we have a solution internally that we can leverage through Hermes.
+1:50:17
+1 hour 50 minutes 17 seconds
+But the ilk is the same as what they're going through.
+1:50:20
+1 hour 50 minutes 20 seconds
+It's just most of that is done at our vendors and then the final processing and cleansing is done by us in cases where we've leveraged Jasmine and her team to essentially act as a vendor.
+1:50:34
+1 hour 50 minutes 34 seconds
+Like we share the same data sets that we share.
+1:50:38
+1 hour 50 minutes 38 seconds
+We share the same data sets with Jasmine and her team as we would with Epsilon or Weiland or any other external vendor.
+1:50:46
+1 hour 50 minutes 46 seconds
+And I'm sure that the process that they just red box, yeah, that same red box that she walked through is exactly what they do for our clients on the direct side too.
+1:50:56
+1 hour 50 minutes 56 seconds
+And in some cases, Ashish and or the team shares the raw file with us for us to run all the suppression against.
+1:51:44
+1 hour 51 minutes 44 seconds
+Yeah.
+1:51:46
+1 hour 51 minutes 46 seconds
+So most likely that red box, what Ashish covered, it's all done at the vendor, right?
+1:51:54
+1 hour 51 minutes 54 seconds
+If Epsilon it's getting the leads, they go through similar process to build a model.
+1:52:00
+1 hour 52 minutes
+They don't right?
+1:52:02
+1 hour 52 minutes 2 seconds
+That's their secret sauce.
+1:52:03
+1 hour 52 minutes 3 seconds
+Yes, exactly.
+1:52:04
+1 hour 52 minutes 4 seconds
+However, you know, they're AUC or area under curve like we see those charts in some cases where we see, you know, does this model look strong by rank?
+1:52:17
+1 hour 52 minutes 17 seconds
+Where's the point of diminishing return?
+1:52:20
+1 hour 52 minutes 20 seconds
+We can also do some of that tracking just through the performance data.
+1:52:24
+1 hour 52 minutes 24 seconds
+And we it's to our benefit to feed the vendor or Jasmine's team with updated response data so they can refresh the model over time.
+1:52:36
+1 hour 52 minutes 36 seconds
+But Jasmine also made a good point.
+1:52:37
+1 hour 52 minutes 37 seconds
+If we're seeing that the model is consistent in performance time and time again, we won't force a rebuild of the model because if it's not broken, don't fix it.
+1:52:48
+1 hour 52 minutes 48 seconds
+If we see an anomaly like in seasonality, we'll typically coach the client that we're not going to be rebuilding the model just yet.
+1:52:57
+1 hour 52 minutes 57 seconds
+Anytime we see a trend of I would say 2 campaigns or more where it's just off, off base or not, not compared to not aligned with what we normally see, that's where we would re trigger sharing a completely new data set, prior responders, prior marketing files so they can see who's a non responder to.
+1:53:21
+1 hour 53 minutes 21 seconds
+And then that black box or red box that we walk through.
+1:53:26
+1 hour 53 minutes 26 seconds
+Every vendor has their own flavor, but I would say that, you know, it's largely the same themes that they're following to make sure that we're, we're putting our best foot forward because we pay them on use, right?
+1:53:41
+1 hour 53 minutes 41 seconds
+So if their model isn't strong, we're not going to use it and they're incentivized to to keep improving it.
+1:53:49
+1 hour 53 minutes 49 seconds
+And even the features when you upload a file you can't select with any of these windows, you can't say use these these attributes for modelling or no, we can't.
+1:53:59
+1 hour 53 minutes 59 seconds
+OK.
+1:54:00
+1 hour 54 minutes
+So the way that we think about it is if we share a responder file or customer file with the vendor to build the model, we want them to build the model off of those customers and score the entire US like all records at their disposal.
+1:54:18
+1 hour 54 minutes 18 seconds
+And then through that indexing and profiling exercise, we can determine which pawns we want to focus in on.
+1:54:25
+1 hour 54 minutes 25 seconds
+So only target age 45 plus, only target income 100K plus, only target net worth 500K plus for example.
+1:54:34
+1 hour 54 minutes 34 seconds
+All of that is typically informed by that profile that will run and or the client's assessment like it's a credit related company, they know that they do best with income 40K and under.
+1:54:49
+1 hour 54 minutes 49 seconds
+So that's probably a good pre select for us.
+1:54:52
+1 hour 54 minutes 52 seconds
+Or if it's a Peloton bike, we're going to target high income people because that's a pretty penny to buy the product and then it's also a subscription on top of that.
+1:55:03
+1 hour 55 minutes 3 seconds
+So we can apply whatever criteria on top of the model.
+1:55:09
+1 hour 55 minutes 9 seconds
+Normally our vendors raise their hand and say, let's just let the model do it.
+1:55:14
+1 hour 55 minutes 14 seconds
+Like let's let the model determine what we wanted to determine.
+1:55:18
+1 hour 55 minutes 18 seconds
+Select the people that are high income or low income or this age or that age.
+1:55:24
+1 hour 55 minutes 24 seconds
+But in some cases the index is so high that it just makes sense for us to remove anyone that doesn't fall within that pond.
+1:55:33
+1 hour 55 minutes 33 seconds
+And then every individual model, let's say 10 vendors are in the campaign and they all have the same, the data set feeding their model.
+1:55:42
+1 hour 55 minutes 42 seconds
+And we apply the same preselects to that, to each model.
+1:55:46
+1 hour 55 minutes 46 seconds
+There's a lot more overlap across vendor, but then every other, every vendor is pitted against each other to figure out who has the best fishing rod to live in that same, you know, metaphor.
+1:55:59
+1 hour 55 minutes 59 seconds
+And then through that exercise, if we find that one vendor is better than the others, then we know, OK, we can make it more efficient.
+1:56:07
+1 hour 56 minutes 7 seconds
+Just proceed with that one vendor as the new champion and then continue the test within that same vendor or any other vendor, multiple models within each vendor.
+1:56:18
+1 hour 56 minutes 18 seconds
+And that's ultimately what allows the client to have confidence in us that we're not just casting a net and saying what works.
+1:56:26
+1 hour 56 minutes 26 seconds
+It's get a baseline for performance.
+1:56:29
+1 hour 56 minutes 29 seconds
+And then that new baseline comes with every campaign and every result we have.
+1:56:35
+1 hour 56 minutes 35 seconds
+And is that completely automated question.
+1:56:37
+1 hour 56 minutes 37 seconds
+When you upload a file, it runs through everything.
+1:56:39
+1 hour 56 minutes 39 seconds
+And then do you work with someone like Epsilon behind the scene who is literally doing whatever actually show completely automated.
+1:56:50
+1 hour 56 minutes 50 seconds
+Once you're portified, it runs through the model and it use, you know, as far as I know, every, every vendor has their automated process, but there's some human review and intervention.
+1:57:02
+1 hour 57 minutes 2 seconds
+So it's not the output, it's not instant in it.
+1:57:04
+1 hour 57 minutes 4 seconds
+It takes like days or yeah.
+1:57:08
+1 hour 57 minutes 8 seconds
+So if we shared a file today with Epsilon to build the model, that model probably wouldn't be ready for us to select names from and run our final processing and selection on for three weeks.
+1:57:23
+1 hour 57 minutes 23 seconds
+So three weeks from file receipt to final model being ready to ship, some vendors can do it in five days.
+1:57:32
+1 hour 57 minutes 32 seconds
+Epsilon is larger, it's the largest and they they've got their pipeline set up and veering off of that is tougher.
+1:57:43
+1 hour 57 minutes 43 seconds
+Our stable of vendors, you know, outside of Epsilon is very hungry and agile.
+1:57:48
+1 hour 57 minutes 48 seconds
+So if we say, hey, we need a model by Friday, build gas it and make it happen, Epsilon is typically the one that won't veer off that course.
+1:57:55
+1 hour 57 minutes 55 seconds
+So that tells me automated process and Epsilon's case kind of controls that timeline.
+1:58:05
+1 hour 58 minutes 5 seconds
+Whereas with our others there could be automated process for identity resolution, no doubt hygiene matching and then all the feature engineering.
+1:58:14
+1 hour 58 minutes 14 seconds
+But there's probably a little more, I guess customization and where they can unplug an automated process and work on it manually to have it go quicker or sidestep something.
+1:58:27
+1 hour 58 minutes 27 seconds
+I'm not sure.
+1:58:28
+1 hour 58 minutes 28 seconds
+It could be that's a disconnect with us that we don't exactly know the secret sauce for every vendor.
+1:58:33
+1 hour 58 minutes 33 seconds
+It could be prioritization too, right?
+1:58:35
+1 hour 58 minutes 35 seconds
+So they have other projects going on.
+1:58:38
+1 hour 58 minutes 38 seconds
+Yeah.
+1:58:39
+1 hour 58 minutes 39 seconds
+And they just have to squeeze in another request and not necessarily the entire process.
+1:58:45
+1 hour 58 minutes 45 seconds
+It's going to take three weeks, but they can only commit to give you the leads within three weeks, so.
+1:58:51
+1 hour 58 minutes 51 seconds
+But it could be it too.
+1:58:53
+1 hour 58 minutes 53 seconds
+I mean, we do that too all the time.
+1:58:55
+1 hour 58 minutes 55 seconds
+Like when project comes in or new model, you see that, right?
+1:59:00
+1 hour 59 minutes
+You know, we can only commit to certain days because of other priorities going on.
+1:59:07
+1 hour 59 minutes 7 seconds
+And if a model's already built like we're just renting names from it or like rescoring and renting a name that's like a three day process like that, that's way quicker because there's the blue box that we're off after is taking place at that point.
+1:59:24
+1 hour 59 minutes 24 seconds
+So yeah, I think once we create the final output, I think that's called SO file scoring output, that's what it's loading back to Axiom.
+1:59:37
+1 hour 59 minutes 37 seconds
+So I think you cover your piece going all the way to the letter shop file, right?
+1:59:43
+1 hour 59 minutes 43 seconds
+So maybe Julie can and then can talk about the process for creating the what they do after they get the SO file loaded back in.
+1:59:56
+1 hour 59 minutes 56 seconds
+Where is that Julie?
+1:59:57
+1 hour 59 minutes 57 seconds
+Are you still there?
+2:00:01
+2 hours 1 second
+I am.
+2:19:48
+2 hours 19 minutes 48 seconds
+OK, right here, final marketing list of selection, it's uploaded.
+2:19:52
+2 hours 19 minutes 52 seconds
+OK, that's where we are.
+2:19:54
+2 hours 19 minutes 54 seconds
+The SO file, this is where we are.
+2:19:57
+2 hours 19 minutes 57 seconds
+And Julie Castro, are you there?
+2:20:04
+2 hours 20 minutes 4 seconds
+That's here.
+2:20:05
+2 hours 20 minutes 5 seconds
+I am.
+2:20:06
+2 hours 20 minutes 6 seconds
+Oh, you are.
+2:20:07
+2 hours 20 minutes 7 seconds
+OK, So that's where you can take off, right.
+2:20:11
+2 hours 20 minutes 11 seconds
+So the SO file it's loaded into the warehouse.
+2:20:16
+2 hours 20 minutes 16 seconds
+Is that where I am or where we are?
+2:20:19
+2 hours 20 minutes 19 seconds
+Yeah, sounds like a good starting point if we have to go back to figure it out.
+2:20:24
+2 hours 20 minutes 24 seconds
+So yeah, it's then the handoff from modeling to my team is this SO file, and that's the one that Jasmine and Hashish went through where they have the keep flags Y&N assigned to each record on this file.
+2:20:42
+2 hours 20 minutes 42 seconds
+So part of this process includes the selections and verbals step of the process, which Jasmine's team works with strategy.
+2:20:54
+2 hours 20 minutes 54 seconds
+And they go, they might go back and forth and they decide how many needs to allocate to each spoken key.
+2:21:43
+2 hours 21 minutes 43 seconds
+Some states needs to have its own spoken key or the control main control has to be split between test and control.
+2:21:53
+2 hours 21 minutes 53 seconds
+Matt Connolly's team wanted to do the test head to head, so we take that control version and split them, assign randomly 5050.
+2:22:04
+2 hours 22 minutes 4 seconds
+All those are reflected in the verbal.
+2:22:07
+2 hours 22 minutes 7 seconds
+So that's the instruction.
+2:22:09
+2 hours 22 minutes 9 seconds
+Julie's taking it from there.
+2:22:12
+2 hours 22 minutes 12 seconds
+And each spoken key means something for Julie and the team when they create the final output.
+2:22:19
+2 hours 22 minutes 19 seconds
+So that is coming from the cut report, not from the DADX.
+2:22:23
+2 hours 22 minutes 23 seconds
+The DLEX, it's also being used for the final, but the verbal, it's coming from the cut report.
+2:22:30
+2 hours 22 minutes 30 seconds
+That's what modelling team uses to assign the records, the number of records and the actual physical records assigning to the selection, I mean assigning to the spoken key, it's being done during the fulfilment process.
+2:22:50
+2 hours 22 minutes 50 seconds
+Yeah, the DLEX is you throughout the entire process at different steps for sure.
+2:22:58
+2 hours 22 minutes 58 seconds
+But for this one in particular we're using this selections in verbal sheets.
+2:23:02
+2 hours 23 minutes 2 seconds
+So once that's approved by strategy, we then go forward and create back end instructions, which through the Soap Crates project last year, we did a deep dive into that and definitely have simplified that process to where we're just taking what modeling has selected for that spoken key and plugging that into Athena.
+2:23:28
+2 hours 23 minutes 28 seconds
+And then just writing like a little write up for Dan and Eric, Dan Hoffer's team to assign those records.
+2:23:36
+2 hours 23 minutes 36 seconds
+Typically the state breakout is or I'm sorry, typically the the spoken key breakout is most likely at a state level or if we have an uninsured or an insured spoken key or like Jasmine pointed out, we might take a larger state population and do an AB split to it.
+2:23:58
+2 hours 23 minutes 58 seconds
+So that's kind of what the breakout looks like of those.
+2:24:03
+2 hours 24 minutes 3 seconds
+So Athena will spit out back end instructions that we then pass to Dan Hoffer and team and they will access the SO file in their tool, in their SQL tool to generate Dan.
+2:24:21
+2 hours 24 minutes 21 seconds
+What is it?
+2:24:22
+2 hours 24 minutes 22 seconds
+Is it an SO or what's the input file name for the score?
+2:24:28
+2 hours 24 minutes 28 seconds
+Yeah, we're we're gonna read the scoring output file, right.
+2:24:31
+2 hours 24 minutes 31 seconds
+And then I'm gonna, I'm gonna select those key flag YS that you select for final selects.
+2:24:37
+2 hours 24 minutes 37 seconds
+And then I'm gonna do the, you know, the spoken key breakout based on the back end instructions.
+2:24:43
+2 hours 24 minutes 43 seconds
+So usually that's usually by state.
+2:24:46
+2 hours 24 minutes 46 seconds
+You know, for the BSM that could be by seg ID or coverage type or random split.
+2:24:56
+2 hours 24 minutes 56 seconds
+Well, yeah.
+2:24:56
+2 hours 24 minutes 56 seconds
+And if there's, if there's a, if there's a test in the control, then I'm going to apply the split in the back end.
+2:25:03
+2 hours 25 minutes 3 seconds
+You know, if it's 5050, Yep.
+2:25:08
+2 hours 25 minutes 8 seconds
+Then Dan would create an extract to go back to Axiom so that we know that this universe or this range of list keys will get assigned this spoken key.
+2:25:21
+2 hours 25 minutes 21 seconds
+This range of list keys will then get assigned this spoken key.
+2:25:27
+2 hours 25 minutes 27 seconds
+So that's done based on control cards.
+2:25:32
+2 hours 25 minutes 32 seconds
+So we have an identifier on the control card that says this range of spoken key or this range of list keys will get this spoken key, This range will get this spoken key.
+2:25:41
+2 hours 25 minutes 41 seconds
+And that's done at Axiom.
+2:25:46
+2 hours 25 minutes 46 seconds
+So and do one, yeah, you're going to cover the CADF creation too, right?
+2:25:54
+2 hours 25 minutes 54 seconds
+Yeah, yeah.
+2:25:54
+2 hours 25 minutes 54 seconds
+So when Dan and Eric or Dan's team will then generate counts for my team to approve, we'll then just do a double check that we're assigning the correct spoken keys and what Sam will do based on the marking schedule.
+2:26:12
+2 hours 26 minutes 12 seconds
+And when things are ready to go, we'll batch sends what we call fulfillment control cards to Axiom.
+2:26:20
+2 hours 26 minutes 20 seconds
+SO1 control card could have many, many different jobs on it.
+2:26:25
+2 hours 26 minutes 25 seconds
+And what Axiom will do is they'll create what we call our fulfillment batch, and then that's when we get another set of reports to confirm that everything that they've appended to each of the records is correct.
+2:26:41
+2 hours 26 minutes 41 seconds
+This is the stage where they're gonna reappends the name and address.
+2:26:46
+2 hours 26 minutes 46 seconds
+It gets reformatted to the data mail output file for DM and gets reformatted to the e-mail output file for e-mail.
+2:26:55
+2 hours 26 minutes 55 seconds
+And then also during the steps like Jasmine was saying, this is where the CADF code is generated as well.
+2:27:05
+2 hours 27 minutes 5 seconds
+So every record will get a CADF code.
+2:27:10
+2 hours 27 minutes 10 seconds
+We make sure that that we have a count that shows that there is a CADF code for every record.
+2:27:17
+2 hours 27 minutes 17 seconds
+We have the current checkpoints to make sure that what we're what's being appended to the file is accurate.
+2:27:25
+2 hours 27 minutes 25 seconds
+So once we're all OK with what's appended to the file and the reports look accurate, we'll then hit an approval button.
+2:27:34
+2 hours 27 minutes 34 seconds
+Right now Axiom gives us Tableau as a tool and is basically we have live links in the Tableau system that we can hit approve and you can either ship it to the data mail or the e-mail vendor through Tableau.
+2:27:51
+2 hours 27 minutes 51 seconds
+Or what we do most of the time is we then create batch shipments to go to Data Mail.
+2:27:57
+2 hours 27 minutes 57 seconds
+So Data Mail won't receive like 100 files, they'll receive 1 file that would contain 50 spoken keys in it.
+2:28:07
+2 hours 28 minutes 7 seconds
+At the same time of shipment to either Data Mail or the e-mail vendor, we're generating the master enrollment file, which is the file where when somebody joins our product, that's how they access the account number.
+2:28:22
+2 hours 28 minutes 22 seconds
+So that master enrollment file lives at Axiom and then it will also generate the OLMB file as well.
+2:28:32
+2 hours 28 minutes 32 seconds
+And that will get shipped the same night that we ship files to either the the print shop or e-mail vendor.
+2:28:45
+2 hours 28 minutes 45 seconds
+And also it creates promo history file for Jasmine's team to access for future analysis.
+2:28:53
+2 hours 28 minutes 53 seconds
+So basically that's a masked version of who was selected to be marketed for those events.
+2:29:04
+2 hours 29 minutes 4 seconds
+I kind of breezed through that.
+2:29:05
+2 hours 29 minutes 5 seconds
+So if you guys had questions or anything, I'd circle back to please let me know.
+2:29:13
+2 hours 29 minutes 13 seconds
+I mean, again, this is where you know, all four enhancements like is this, this is what we need to achieve.
+2:29:22
+2 hours 29 minutes 22 seconds
+Here is the final selected names.
+2:29:24
+2 hours 29 minutes 24 seconds
+And here is how we have to assign to the spoken key.
+2:29:27
+2 hours 29 minutes 27 seconds
+And you know how we need to split, how we need to split the state and things like that.
+2:29:32
+2 hours 29 minutes 32 seconds
+So however we build the process or we need is a process to achieve this goal.
+2:29:39
+2 hours 29 minutes 39 seconds
+It doesn't have to be exactly the way we are doing it today, but it seems like this might be something to consider along with what the printing companies or distribution endpoint, whatever that may be, needs for an input.
+2:29:55
+2 hours 29 minutes 55 seconds
+And as we're adjusting things through the Shrew project and thinking about different ways in which we're going to send files and send, you know, do we also then think about the different ways in which data is going to get the printing companies and that goes as a package or gets matched at the printing company or how that all works.
+2:30:11
+2 hours 30 minutes 11 seconds
+That probably helps to determine what what the options are for that step.
+2:30:16
+2 hours 30 minutes 16 seconds
+But again, this is based on how we are doing marketing today.
+2:30:22
+2 hours 30 minutes 22 seconds
+So if we change completely our marketing strategy more.
+
+0:02
+0 minutes 2 seconds
+So, you know, since we will be moving to the VM, we need the compute resources as well to process and to, you know, power up all these projects.
+0:13
+0 minutes 13 seconds
+Yes.
+0:14
+0 minutes 14 seconds
+Yep, Yep.
+0:15
+0 minutes 15 seconds
+That's high priority.
+0:16
+0 minutes 16 seconds
+Well taken Atish here.
+0:19
+0 minutes 19 seconds
+Yep.
+0:19
+0 minutes 19 seconds
+And I mean, we have just one VM as of now.
+0:22
+0 minutes 22 seconds
+If that goes down, you know, we are all stuck.
+0:24
+0 minutes 24 seconds
+So, yeah, those little things and also they couldn't function while you guys were testing with the different, you know, we were kind of stuck during, you know, big production time frame.
+0:41
+0 minutes 41 seconds
+So yeah, yeah.
+0:42
+0 minutes 42 seconds
+Ashish.
+3:55
+3 minutes 55 seconds
+And then for storage, we need 25 gigs, 25 terabytes, 25 terabytes, yes, yes, yeah.
+4:07
+4 minutes 7 seconds
+OK.
+4:08
+4 minutes 8 seconds
+And and for the VM access sessions and all, one thing to look at is if you can modify your intake of how you submit the jobs to your, to your batch.
+4:23
+4 minutes 23 seconds
+Oh, yeah, I'm great.
+4:24
+4 minutes 24 seconds
+So if you can just automate it in such a way that you just push the request queued up on the server and then pick it up rather than each user getting on to that VM and trying to, you know, run the jobs.
+4:37
+4 minutes 37 seconds
+That's something to think about so that we can now reduce our costs.
+4:43
+4 minutes 43 seconds
+Say that again, Karthik, Sorry, I missed that first part.
+4:46
+4 minutes 46 seconds
+So now the requirement, one of the requirement that you're looking at is to have several users log on to that server, right?
+4:54
+4 minutes 54 seconds
+Yeah.
+4:56
+4 minutes 56 seconds
+But rather if you can just push or just submit the job requests to the server and have a wait for the server to pick it up and process it rather than each user trying to get on to that server, right?
+5:10
+5 minutes 10 seconds
+Yeah, that's a very good point.
+5:12
+5 minutes 12 seconds
+The only thing is, you know, we work in this fast-paced environment, we may not have that luxury to schedule those jobs.
+5:20
+5 minutes 20 seconds
+And, you know, somebody looking the other day to see all those reports and finally progressing forward, we may want to, you know, once those jobs are ready, just move forward, pass it along to next step.
+5:31
+5 minutes 31 seconds
+Because, you know, as we discussed today, we have this dependency.
+5:34
+5 minutes 34 seconds
+We have to transfer those files back to XM.
+5:37
+5 minutes 37 seconds
+They need to do the those next steps.
+5:39
+5 minutes 39 seconds
+So Yep, that's the limitation.
+5:43
+5 minutes 43 seconds
+But yeah, that's a good idea.
+5:44
+5 minutes 44 seconds
+We can try scheduling if that helps.
+5:48
+5 minutes 48 seconds
+And one of our goal everyone that's trying to achieve is speed to market.
+5:54
+5 minutes 54 seconds
+So this is the way of, you know, circling the file, turn around from file processing all the way to selection.
+6:04
+6 minutes 4 seconds
+So if we have to wait this kind of, you know, delay, I figure that's going to cost us too.
+6:18
+6 minutes 18 seconds
+OK.
+6:19
+6 minutes 19 seconds
+So then tomorrow, Rahman and team will go first, we can cover some pain points and then we can talk about kind of planning, timing, next steps, scope as well.
+6:32
+6 minutes 32 seconds
+And then for tonight, anybody that's interested, I made reservations at 5:30 over at Oklahoma News, which is just a local Mexican place.
+6:39
+6 minutes 39 seconds
+It's right across the bridge.
+6:43
+6 minutes 43 seconds
+I gotta eat.
+6:45
+6 minutes 45 seconds
+Gotta eat.
+6:46
+6 minutes 46 seconds
+OK.
+6:49
+6 minutes 49 seconds
+So.
+6:50
+6 minutes 50 seconds
+OK.
+6:50
+6 minutes 50 seconds
+Well, thanks, y'all.
+6:51
+6 minutes 51 seconds
+Thank you.
+6:52
+6 minutes 52 seconds
+Long, busy, productive.
+6:54
+6 minutes 54 seconds
+So we're going to meet at the restaurant or are we?
+6:58
+6 minutes 58 seconds
+I think.
+6:58
+6 minutes 58 seconds
+I mean, unless y'all have anything else you want to cover today?
+7:01
+7 minutes 1 second
+I think we're sort of done.
+7:02
+7 minutes 2 seconds
+Yeah.
+7:02
+7 minutes 2 seconds
+Yeah.
+7:03
+7 minutes 3 seconds
+Mentally.
+7:04
+7 minutes 4 seconds
+And next restaurant.
+7:05
+7 minutes 5 seconds
+Restaurant.
+7:06
+7 minutes 6 seconds
+Uh huh.
+7:08
+7 minutes 8 seconds
+That's grab an Uber maybe at 5:15.
+7:10
+7 minutes 10 seconds
+Yeah, that's 5:15.
+7:12
+7 minutes 12 seconds
+Sounds good to me.
+7:15
+7 minutes 15 seconds
+From here or from the hotel?
+7:17
+7 minutes 17 seconds
+Probably the hotel, Yeah.
+7:20
+7 minutes 20 seconds
+Drop bags off and things over there.

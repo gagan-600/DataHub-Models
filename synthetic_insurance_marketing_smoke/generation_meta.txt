@@ -1,0 +1,5 @@
+n_target_rows=5000
+chunk_rows=10000
+seed=1
+n_templates=10000
+total_rows_written=5000

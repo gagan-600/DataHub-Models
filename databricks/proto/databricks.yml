@@ -1,0 +1,122 @@
+# Databricks Asset Bundle — marketing SD/STAT MRGAL prototype
+# Docs: https://docs.databricks.com/dev-tools/bundles/index.html
+#
+# Usage:
+#   cd databricks/proto
+#   databricks bundle validate
+#   databricks bundle deploy --target dev
+
+bundle:
+  name: marketing_proto_e2e
+
+variables:
+  catalog:
+    default: main
+  bronze_schema:
+    default: marketing_proto_bronze
+  silver_schema:
+    default: marketing_proto_silver
+  gold_schema:
+    default: marketing_proto_gold
+  # After uploading fixtures — DBFS, Volume, or s3://
+  fixture_base:
+    default: /dbfs/FileStore/marketing_proto_fixtures
+  product_line:
+    default: HOSPITAL_ACCIDENT
+
+targets:
+  dev:
+    mode: development
+    default: true
+
+resources:
+  jobs:
+    marketing_proto_e2e:
+      name: marketing_proto_sd_stat_mrgal_e2e
+      max_concurrent_runs: 1
+      tasks:
+        - task_key: step_01_ingest
+          notebook_task:
+            notebook_path: ./src/01_s3_discover_ingest.py
+            base_parameters:
+              catalog: ${var.catalog}
+              bronze_schema: ${var.bronze_schema}
+              silver_schema: ${var.silver_schema}
+              gold_schema: ${var.gold_schema}
+              fixture_base: ${var.fixture_base}
+              run_id: "proto-run"
+        - task_key: step_02_mrgal
+          depends_on:
+            - task_key: step_01_ingest
+          notebook_task:
+            notebook_path: ./src/02_auto_mrgal.py
+            base_parameters:
+              catalog: ${var.catalog}
+              bronze_schema: ${var.bronze_schema}
+              silver_schema: ${var.silver_schema}
+              gold_schema: ${var.gold_schema}
+              fixture_base: ${var.fixture_base}
+              run_id: "proto-run"
+        - task_key: step_03_sample_prep
+          depends_on:
+            - task_key: step_02_mrgal
+          notebook_task:
+            notebook_path: ./src/03_auto_sample_prep.py
+            base_parameters:
+              catalog: ${var.catalog}
+              bronze_schema: ${var.bronze_schema}
+              silver_schema: ${var.silver_schema}
+              gold_schema: ${var.gold_schema}
+              fixture_base: ${var.fixture_base}
+              run_id: "proto-run"
+        - task_key: step_04_train
+          depends_on:
+            - task_key: step_03_sample_prep
+          notebook_task:
+            notebook_path: ./src/04_live_model_train.py
+            base_parameters:
+              catalog: ${var.catalog}
+              bronze_schema: ${var.bronze_schema}
+              silver_schema: ${var.silver_schema}
+              gold_schema: ${var.gold_schema}
+              fixture_base: ${var.fixture_base}
+              run_id: "proto-run"
+              product_line: ${var.product_line}
+        - task_key: step_05_validation
+          depends_on:
+            - task_key: step_04_train
+          notebook_task:
+            notebook_path: ./src/05_validation.py
+            base_parameters:
+              catalog: ${var.catalog}
+              bronze_schema: ${var.bronze_schema}
+              silver_schema: ${var.silver_schema}
+              gold_schema: ${var.gold_schema}
+              fixture_base: ${var.fixture_base}
+              run_id: "proto-run"
+              product_line: ${var.product_line}
+        - task_key: step_06_recommendations_stub
+          depends_on:
+            - task_key: step_05_validation
+          notebook_task:
+            notebook_path: ./src/06_recommendations_stub.py
+            base_parameters:
+              catalog: ${var.catalog}
+              bronze_schema: ${var.bronze_schema}
+              silver_schema: ${var.silver_schema}
+              gold_schema: ${var.gold_schema}
+              fixture_base: ${var.fixture_base}
+              run_id: "proto-run"
+        - task_key: step_07_batch_score
+          depends_on:
+            - task_key: step_06_recommendations_stub
+          notebook_task:
+            notebook_path: ./src/07_batch_score.py
+            base_parameters:
+              catalog: ${var.catalog}
+              bronze_schema: ${var.bronze_schema}
+              silver_schema: ${var.silver_schema}
+              gold_schema: ${var.gold_schema}
+              fixture_base: ${var.fixture_base}
+              run_id: "proto-run"
+              product_line: ${var.product_line}
