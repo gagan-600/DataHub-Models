@@ -105,6 +105,15 @@ Keep **this repo as the source of truth** in Git (GitHub, GitLab, Azure DevOps, 
 6. **Fixtures and Git**  
    Generated `*.parquet` under `databricks/proto/fixtures/` can be large. Many teams **do not commit** them: add `databricks/proto/fixtures/*.parquet` to `.gitignore`, store artifacts in a **Volume** or **S3**, and generate them in CI or a one-off notebook. If you do commit them, consider **Git LFS** for your org’s policy.
 
+### Databricks still shows `Mlops/`, `scripts/`, or other removed folders?
+
+On GitHub, **`main` only contains** `README.md`, `.gitignore`, and `databricks/proto/**`. If Databricks still shows the old tree, you are on a **stale clone** or not inside **Repos**.
+
+1. **Confirm on GitHub** (browser): open `https://github.com/gagan-600/DataHub-Models` → branch **`main`** → you should see **only** those paths (no `Mlops/`, no `scripts/`).
+2. **Open the Git copy, not Workspace uploads:** left sidebar **Workspace → Repos** (or **Catalog → Git folders**) → your **DataHub-Models** repo. Do **not** use an old folder under **Workspace** where you may have uploaded the full project earlier.
+3. **Pull latest:** in the Repo, open the **branch** menu → **Pull** (or **Sync**). If there is no pull, **remove** this Git folder / Repo link and **Add repo** again with `https://github.com/gagan-600/DataHub-Models.git` on branch **`main`**.
+4. **Optional — sparse checkout:** when creating the Git folder, enable **sparse checkout** and set the path to **`databricks/proto`** so only that directory is checked out (useful if the repo grows again later).
+
 ## Deploy the job (Databricks Asset Bundles)
 
 Install the CLI once (pick one):
