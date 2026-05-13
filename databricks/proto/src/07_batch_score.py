@@ -2,17 +2,19 @@
 # MAGIC %md
 # MAGIC # 07 — Batch score (product-specific model: scores rows where `product_line` matches widget; others get null `prediction_prob`)
 
+# COMMAND ----------
+
 import mlflow
 import mlflow.sklearn
 import numpy as np
 import pandas as pd
 from pyspark.sql import functions as F
 
-dbutils.widgets.text("catalog", "main")
+dbutils.widgets.text("catalog", "workspace")
 dbutils.widgets.text("bronze_schema", "marketing_proto_bronze")
 dbutils.widgets.text("silver_schema", "marketing_proto_silver")
 dbutils.widgets.text("gold_schema", "marketing_proto_gold")
-dbutils.widgets.text("fixture_base", "/dbfs/FileStore/marketing_proto_fixtures")
+dbutils.widgets.text("fixture_base", "/Volumes/workspace/default/marketing_proto_fixtures")
 dbutils.widgets.text("run_id", "proto-run")
 dbutils.widgets.text("product_line", "HOSPITAL_ACCIDENT")
 
@@ -34,6 +36,8 @@ meta_row = meta_rows[0]
 mlflow_run_id = meta_row.mlflow_run_id
 
 model = mlflow.sklearn.load_model(f"runs:/{mlflow_run_id}/model")
+
+# COMMAND ----------
 
 pdf = spark.table(f"{catalog}.{silver_schema}.silver_sample_base").toPandas()
 if "product_line" not in pdf.columns:
@@ -58,6 +62,8 @@ pdf.loc[mask, "prediction_prob"] = model.predict_proba(X.loc[mask])[:, 1]
 pdf["score_run_id"] = run_tag
 pdf["mlflow_run_id"] = mlflow_run_id
 pdf["model_product_line"] = product_line
+
+# COMMAND ----------
 
 keep = [
     "pit_key",

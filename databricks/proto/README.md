@@ -93,7 +93,8 @@ Keep **this repo as the source of truth** in Git (GitHub, GitLab, Azure DevOps, 
 
 3. **Run notebooks from Git**  
    Open tasks from the Repo tree, for example:  
-   `Repos/.../DataHub-Models/databricks/proto/src/01_s3_discover_ingest.py` through `07_batch_score.py`.
+   `Repos/.../DataHub-Models/databricks/proto/src/01_s3_discover_ingest.py` through `07_batch_score.py`.  
+   Files are **Databricks `.py` source notebooks** (not `.ipynb`). Cells are separated by **`# COMMAND ----------`** after the `%md` header and between major steps so the editor shows multiple cells after you **Pull** the latest commit.
 
 4. **Jobs (Workflows)**  
    - **Option A — Job points at Repo notebooks:** create a multi-task job whose notebook paths are the **Repo** paths above. Use the same **base parameters** as in `databricks.yml` (`catalog`, `*_schema`, `fixture_base`, `run_id`, `product_line`).  

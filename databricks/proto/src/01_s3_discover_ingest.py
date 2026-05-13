@@ -2,16 +2,26 @@
 # MAGIC %md
 # MAGIC # 01 — Discover and ingest SD + STAT + responders (Spark → Delta)
 # MAGIC
-# MAGIC Reads Parquet from **`fixture_base`** (DBFS path, UC Volume, or `s3://` if configured).
+# MAGIC Reads Parquet from **`fixture_base`** (Unity Catalog **Volume** path recommended when DBFS is disabled on serverless).
 # MAGIC **Do not** use long-lived AWS keys in widgets — use IAM roles / UC external locations.
+
+# COMMAND ----------
 
 from pyspark.sql import functions as F
 
-dbutils.widgets.text("catalog", "main")
+REQUIRED_FIXTURE_FILES = (
+    "sd_driver.parquet",
+    "stat_promotion.parquet",
+    "stat_membership.parquet",
+    "stat_demographics.parquet",
+    "responders.parquet",
+)
+
+dbutils.widgets.text("catalog", "workspace")
 dbutils.widgets.text("bronze_schema", "marketing_proto_bronze")
 dbutils.widgets.text("silver_schema", "marketing_proto_silver")
 dbutils.widgets.text("gold_schema", "marketing_proto_gold")
-dbutils.widgets.text("fixture_base", "/dbfs/FileStore/marketing_proto_fixtures")
+dbutils.widgets.text("fixture_base", "/Volumes/workspace/default/marketing_proto_fixtures")
 dbutils.widgets.text("run_id", "proto-run")
 
 catalog = dbutils.widgets.get("catalog").strip()
@@ -25,6 +35,23 @@ for s in (bronze_schema, silver_schema, gold_schema):
     spark.sql(f"CREATE SCHEMA IF NOT EXISTS {catalog}.{s}")
 
 base = fixture_base
+try:
+    found = {e.name for e in dbutils.fs.ls(base)}
+except Exception as ex:
+    raise RuntimeError(
+        f"Cannot list fixture_base={base!r}. "
+        "Create the UC Volume and upload Parquet files, or set widget fixture_base to a path your cluster can read. "
+        f"Original error: {ex}"
+    ) from ex
+missing = [f for f in REQUIRED_FIXTURE_FILES if f not in found]
+if missing:
+    raise FileNotFoundError(
+        f"Fixture data not found in {base}/. Missing files: {missing}. "
+        "Upload the five Parquet files from the repo folder databricks/proto/fixtures/ into this Volume (or your chosen path)."
+    )
+
+# COMMAND ----------
+
 sd_path = f"{base}/sd_driver.parquet"
 stat_promo_path = f"{base}/stat_promotion.parquet"
 stat_member_path = f"{base}/stat_membership.parquet"

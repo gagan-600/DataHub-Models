@@ -4,6 +4,8 @@
 # MAGIC
 # MAGIC Trains only on rows where **`product_line`** matches the widget (transcript: sister / child model on product-specific samples). Uses **pandas** on the filtered slice (OK for fixture scale).
 
+# COMMAND ----------
+
 import mlflow
 import mlflow.sklearn
 import pandas as pd
@@ -20,11 +22,11 @@ try:
 except TypeError:
     _ohe = OneHotEncoder(handle_unknown="ignore", sparse=False)
 
-dbutils.widgets.text("catalog", "main")
+dbutils.widgets.text("catalog", "workspace")
 dbutils.widgets.text("bronze_schema", "marketing_proto_bronze")
 dbutils.widgets.text("silver_schema", "marketing_proto_silver")
 dbutils.widgets.text("gold_schema", "marketing_proto_gold")
-dbutils.widgets.text("fixture_base", "/dbfs/FileStore/marketing_proto_fixtures")
+dbutils.widgets.text("fixture_base", "/Volumes/workspace/default/marketing_proto_fixtures")
 dbutils.widgets.text("run_id", "proto-run")
 dbutils.widgets.text("product_line", "HOSPITAL_ACCIDENT")
 
@@ -76,6 +78,8 @@ pipe = Pipeline(
     ]
 )
 
+# COMMAND ----------
+
 gss = GroupShuffleSplit(n_splits=1, test_size=0.25, random_state=42)
 tr_idx, te_idx = next(gss.split(X, y, groups=pdf["customer_id"]))
 X_train, X_test = X.iloc[tr_idx], X.iloc[te_idx]
@@ -98,6 +102,8 @@ with mlflow.start_run(run_name=f"proto_lr_{product_line}_{run_tag}") as active:
     mlflow.log_param("product_line", product_line)
     mlflow.sklearn.log_model(pipe, artifact_path="model")
     trained_run_id = active.info.run_id
+
+# COMMAND ----------
 
 meta = spark.createDataFrame(
     [

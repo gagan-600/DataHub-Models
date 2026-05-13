@@ -2,13 +2,15 @@
 # MAGIC %md
 # MAGIC # 03 — Auto sample prep (MRGAL + responders append + optional flags)
 
+# COMMAND ----------
+
 from pyspark.sql import functions as F
 
-dbutils.widgets.text("catalog", "main")
+dbutils.widgets.text("catalog", "workspace")
 dbutils.widgets.text("bronze_schema", "marketing_proto_bronze")
 dbutils.widgets.text("silver_schema", "marketing_proto_silver")
 dbutils.widgets.text("gold_schema", "marketing_proto_gold")
-dbutils.widgets.text("fixture_base", "/dbfs/FileStore/marketing_proto_fixtures")
+dbutils.widgets.text("fixture_base", "/Volumes/workspace/default/marketing_proto_fixtures")
 dbutils.widgets.text("run_id", "proto-run")
 
 catalog = dbutils.widgets.get("catalog").strip()
@@ -29,6 +31,8 @@ sample = (
     .withColumn("sample_prep_run_id", F.lit(run_id))
     .withColumn("sample_prep_ts", F.current_timestamp())
 )
+
+# COMMAND ----------
 
 sample.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable(f"{catalog}.{silver_schema}.silver_sample_base")
 

@@ -2,6 +2,8 @@
 # MAGIC %md
 # MAGIC # 05 — Validation (product-specific: latest MLflow run for `product_line` + holdout on same slice)
 
+# COMMAND ----------
+
 import mlflow
 import mlflow.sklearn
 import pandas as pd
@@ -9,11 +11,11 @@ from pyspark.sql import functions as F
 from sklearn.metrics import average_precision_score, roc_auc_score
 from sklearn.model_selection import GroupShuffleSplit
 
-dbutils.widgets.text("catalog", "main")
+dbutils.widgets.text("catalog", "workspace")
 dbutils.widgets.text("bronze_schema", "marketing_proto_bronze")
 dbutils.widgets.text("silver_schema", "marketing_proto_silver")
 dbutils.widgets.text("gold_schema", "marketing_proto_gold")
-dbutils.widgets.text("fixture_base", "/dbfs/FileStore/marketing_proto_fixtures")
+dbutils.widgets.text("fixture_base", "/Volumes/workspace/default/marketing_proto_fixtures")
 dbutils.widgets.text("run_id", "proto-run")
 dbutils.widgets.text("product_line", "HOSPITAL_ACCIDENT")
 
@@ -53,6 +55,8 @@ feature_cols = [
 X = pdf[feature_cols].fillna(0)
 y = pdf["response_flag"].astype(int)
 
+# COMMAND ----------
+
 model = mlflow.sklearn.load_model(f"runs:/{mlflow_run_id}/model")
 
 gss = GroupShuffleSplit(n_splits=1, test_size=0.25, random_state=42)
@@ -63,6 +67,8 @@ y_test = y.iloc[te_idx]
 prob = model.predict_proba(X_test)[:, 1]
 auc = float(roc_auc_score(y_test, prob))
 ap = float(average_precision_score(y_test, prob))
+
+# COMMAND ----------
 
 out = spark.createDataFrame(
     [(mlflow_run_id, product_line, auc, ap, int(len(te_idx)))],

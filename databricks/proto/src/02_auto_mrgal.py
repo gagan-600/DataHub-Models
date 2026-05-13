@@ -2,13 +2,15 @@
 # MAGIC %md
 # MAGIC # 02 — Auto MRGAL (join SD + all STAT feeds on `pit_key`)
 
+# COMMAND ----------
+
 from pyspark.sql import functions as F
 
-dbutils.widgets.text("catalog", "main")
+dbutils.widgets.text("catalog", "workspace")
 dbutils.widgets.text("bronze_schema", "marketing_proto_bronze")
 dbutils.widgets.text("silver_schema", "marketing_proto_silver")
 dbutils.widgets.text("gold_schema", "marketing_proto_gold")
-dbutils.widgets.text("fixture_base", "/dbfs/FileStore/marketing_proto_fixtures")
+dbutils.widgets.text("fixture_base", "/Volumes/workspace/default/marketing_proto_fixtures")
 dbutils.widgets.text("run_id", "proto-run")
 
 catalog = dbutils.widgets.get("catalog").strip()
@@ -54,6 +56,8 @@ mrgal = (
     .withColumn("mrgal_run_id", F.lit(run_id))
     .withColumn("mrgal_built_ts", F.current_timestamp())
 )
+
+# COMMAND ----------
 
 mrgal.write.format("delta").mode("overwrite").option("overwriteSchema", "true").saveAsTable(f"{catalog}.{silver_schema}.silver_mrgal_universe")
 
