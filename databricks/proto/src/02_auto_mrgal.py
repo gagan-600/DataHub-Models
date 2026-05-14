@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # 02 — Auto MRGAL (join SD + all STAT feeds on `pit_key`)
+# MAGIC # 02 — MRGAL (merge STAT onto health SD grain on `pit_key`)
 
 # COMMAND ----------
 
@@ -26,9 +26,9 @@ demo = spark.table(f"{catalog}.{bronze_schema}.bronze_stat_demographics")
 # Rename overlapping non-key columns before join (if any)
 promo_c = promo.select(
     "pit_key",
-    F.col("promo_touch_count_90d").alias("stat_promo_touch_count_90d"),
-    F.col("last_promo_channel").alias("stat_last_promo_channel"),
-    F.col("promo_spend_band").alias("stat_promo_spend_band"),
+    F.col("outreach_touch_count_90d").alias("stat_outreach_touch_count_90d"),
+    F.col("last_outreach_channel").alias("stat_last_outreach_channel"),
+    F.col("benefit_tier_band").alias("stat_benefit_tier_band"),
     "ingest_run_id",
     "ingest_ts",
 )
@@ -36,7 +36,7 @@ member_c = member.select(
     "pit_key",
     F.col("member_tier").alias("stat_member_tier"),
     F.col("tenure_months").alias("stat_tenure_months"),
-    F.col("active_products_ct").alias("stat_active_products_ct"),
+    F.col("active_coverages_ct").alias("stat_active_coverages_ct"),
     "ingest_run_id",
     "ingest_ts",
 )

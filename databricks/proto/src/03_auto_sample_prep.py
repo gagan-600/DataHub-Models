@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # 03 — Auto sample prep (MRGAL + responders append + optional flags)
+# MAGIC # 03 — Sample prep (MRGAL + responders; health supplemental outreach)
 
 # COMMAND ----------
 

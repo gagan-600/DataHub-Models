@@ -1,12 +1,12 @@
-# Marketing proto pipeline (Databricks) — SD + STAT → MRGAL → sample prep + responders
+# Health supplemental proto (Databricks) — SD + STAT → MRGAL → sample prep + responders
 
 **Source of truth:** keep notebooks and `databricks.yml` in **Git**; use **Databricks Repos** (and/or **bundle deploy** from a Git clone). See [Git-first workflow](#git-first-workflow) below.
 
-This bundle implements a **small end-to-end** flow matching the FMG diagram **through batch scoring**:
+This bundle implements a **small end-to-end** flow for **supplemental / accident & illness style** health outreach data **through batch scoring**:
 
-1. **Ingest** SD driver + multiple STAT Parquet files + responders from a **single folder** (DBFS, **Unity Catalog Volume**, or `s3a://…` if the cluster can read it).
-2. **Auto MRGAL** — join all STAT snapshots onto the SD grain on **`pit_key`**.
-3. **Auto sample prep** — left-join **responders**; derive `responder_joined` flag.
+1. **Ingest** health SD driver + multiple STAT Parquet files + responders from a **single folder** (DBFS, **Unity Catalog Volume**, or `s3a://…` if the cluster can read it).
+2. **MRGAL** — join all STAT snapshots onto the SD grain on **`pit_key`**.
+3. **Sample prep** — left-join **responders**; derive `responder_joined` flag.
 4. **Train** — **product-specific** baseline **sklearn** model (filter by `product_line`) + **MLflow** (prototype scale; swap for Spark ML for production volume).
 5. **Validate** — AUC / PR-AUC on holdout for the same `product_line` slice, using the latest MLflow run for that line.
 6. **Recommendations** — stub table (extend later).
@@ -40,9 +40,9 @@ py -3 scripts/generate_sd_stat_fixtures.py --out databricks/proto/fixtures --n 8
 
 | File | Role |
 |------|------|
-| `sd_driver.parquet` | **Score driver** — one row per `(customer_id, campaign_id)` plus **`product_line`** |
-| `stat_promotion.parquet` | **STAT** — promotion-style attributes |
-| `stat_membership.parquet` | **STAT** — membership attributes |
+| `sd_driver.parquet` | **Score driver** — one row per `(customer_id, outreach_batch_id)` plus **`product_line`** (supplemental health / A&I style offers) |
+| `stat_promotion.parquet` | **STAT** — recent outreach touches, channels, benefit tier band |
+| `stat_membership.parquet` | **STAT** — supplemental plan tier, tenure, active coverages count |
 | `stat_demographics.parquet` | **STAT** — demographics (≈97% rows: simulates late/missing keys) |
 | `responders.parquet` | **Responders append** — positive keys only (includes **`product_line`**) |
 
@@ -52,7 +52,7 @@ Generate or refresh fixtures from repo root:
 py -3 scripts/generate_sd_stat_fixtures.py --out databricks/proto/fixtures --n 8000
 ```
 
-**Join key (all files):** `pit_key` = `customer_id || campaign_id` (literal string with `||`).
+**Join key (all files):** `pit_key` = `customer_id || outreach_batch_id` (literal string with `||`).
 
 ### Upload fixtures to Databricks
 

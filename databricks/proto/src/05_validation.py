@@ -40,16 +40,16 @@ pdf = pdf_all[pdf_all["product_line"].astype(str).str.upper() == product_line].c
 if len(pdf) < 20:
     raise ValueError(f"Too few rows to validate for product_line={product_line!r} (n={len(pdf)}).")
 feature_cols = [
-    "income",
-    "monthly_premium",
-    "months_since_last_claim",
-    "clv",
-    "stat_promo_touch_count_90d",
+    "household_income_index",
+    "monthly_supplemental_premium",
+    "months_since_last_benefit_event",
+    "member_engagement_score",
+    "stat_outreach_touch_count_90d",
     "stat_tenure_months",
-    "stat_active_products_ct",
+    "stat_active_coverages_ct",
     "stat_member_tier",
     "state",
-    "campaign_channel",
+    "outreach_channel",
     "offer_type",
 ]
 X = pdf[feature_cols].fillna(0)

@@ -1,8 +1,8 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # 01 — Discover and ingest SD + STAT + responders (Spark → Delta)
+# MAGIC # 01 — Ingest health supplemental SD + STAT + responders (Spark → Delta)
 # MAGIC
-# MAGIC Reads Parquet from **`fixture_base`** (Unity Catalog **Volume** path recommended when DBFS is disabled on serverless).
+# MAGIC **Accident & illness / supplemental health** outreach grain. Reads Parquet from **`fixture_base`** (Unity Catalog **Volume** when DBFS is disabled on serverless).
 # MAGIC **Do not** use long-lived AWS keys in widgets — use IAM roles / UC external locations.
 
 # COMMAND ----------

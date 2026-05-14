@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # 04 — Live model train (product-specific child model + MLflow)
+# MAGIC # 04 — Live model train (health supplemental, product-specific + MLflow)
 # MAGIC
 # MAGIC Trains only on rows where **`product_line`** matches the widget (transcript: sister / child model on product-specific samples). Uses **pandas** on the filtered slice (OK for fixture scale).
 
@@ -47,19 +47,19 @@ if len(pdf) < 50:
     )
 
 feature_cols = [
-    "income",
-    "monthly_premium",
-    "months_since_last_claim",
-    "clv",
-    "stat_promo_touch_count_90d",
+    "household_income_index",
+    "monthly_supplemental_premium",
+    "months_since_last_benefit_event",
+    "member_engagement_score",
+    "stat_outreach_touch_count_90d",
     "stat_tenure_months",
-    "stat_active_products_ct",
+    "stat_active_coverages_ct",
     "stat_member_tier",
     "state",
-    "campaign_channel",
+    "outreach_channel",
     "offer_type",
 ]
-cat_cols = ["stat_member_tier", "state", "campaign_channel", "offer_type"]
+cat_cols = ["stat_member_tier", "state", "outreach_channel", "offer_type"]
 num_cols = [c for c in feature_cols if c not in cat_cols]
 
 X = pdf[feature_cols].fillna(0)

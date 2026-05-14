@@ -1,6 +1,6 @@
 # Databricks notebook source
 # MAGIC %md
-# MAGIC # 07 — Batch score (product-specific model: scores rows where `product_line` matches widget; others get null `prediction_prob`)
+# MAGIC # 07 — Batch score (health supplemental; product-specific model)
 
 # COMMAND ----------
 
@@ -43,16 +43,16 @@ pdf = spark.table(f"{catalog}.{silver_schema}.silver_sample_base").toPandas()
 if "product_line" not in pdf.columns:
     raise ValueError("silver_sample_base missing product_line — re-run 01–03 after refreshing fixtures.")
 feature_cols = [
-    "income",
-    "monthly_premium",
-    "months_since_last_claim",
-    "clv",
-    "stat_promo_touch_count_90d",
+    "household_income_index",
+    "monthly_supplemental_premium",
+    "months_since_last_benefit_event",
+    "member_engagement_score",
+    "stat_outreach_touch_count_90d",
     "stat_tenure_months",
-    "stat_active_products_ct",
+    "stat_active_coverages_ct",
     "stat_member_tier",
     "state",
-    "campaign_channel",
+    "outreach_channel",
     "offer_type",
 ]
 mask = pdf["product_line"].astype(str).str.upper() == product_line
@@ -68,7 +68,7 @@ pdf["model_product_line"] = product_line
 keep = [
     "pit_key",
     "customer_id",
-    "campaign_id",
+    "outreach_batch_id",
     "product_line",
     "response_flag",
     "responder_joined",

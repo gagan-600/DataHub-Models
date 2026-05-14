@@ -10,7 +10,8 @@ venv/
 
 # --- Not required for Databricks proto job (keep locally; do not commit) ---
 /Mlops/
-/scripts/
+/scripts/*
+!/scripts/generate_sd_stat_fixtures.py
 /README-synthetic-data.md
 /requirements-synth.txt
 /synthetic_insurance_marketing_2m/
